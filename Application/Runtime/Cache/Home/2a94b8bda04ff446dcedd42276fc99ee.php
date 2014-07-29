@@ -1,9 +1,9 @@
 <?php if (!defined('THINK_PATH')) exit();?><html>
  <head>
    <title><?php echo ($index_title); ?></title>
-    <link rel="stylesheet" type="text/css" href="/tcs/Public/ext-2.0.2/resources/css/ext-all.css"/>
-    <script type="text/javascript" src="/tcs/Public/ext-2.0.2/adapter/ext/ext-base.js"></script>
-    <script type="text/javascript" src="/tcs/Public/ext-2.0.2/ext-all.js"></script>
+    <link rel="stylesheet" type="text/css" href="/tcs/trunk/Public/ext-2.0.2/resources/css/ext-all.css"/>
+    <script type="text/javascript" src="/tcs/trunk/Public/ext-2.0.2/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="/tcs/trunk/Public/ext-2.0.2/ext-all.js"></script>
 <style type="text/css">
     html, body {
         font:normal 12px verdana;
@@ -17,16 +17,17 @@
         margin:5px;
     }
     .settings {
-        background-image:url(/tcs/Public/ext-2.0.2/examples/shared/icons/fam/folder_wrench.png);
+        background-image:url(/tcs/trunk/Public/ext-2.0.2/examples/shared/icons/fam/folder_wrench.png);
     }
     .nav {
-        background-image:url(/tcs/Public/ext-2.0.2/examples/shared/icons/fam/folder_go.png);
+        background-image:url(/tcs/trunk/Public/ext-2.0.2/examples/shared/icons/fam/folder_go.png);
     }
     .tcs_menu_item{
         text-align: left;
         padding: 0 0 0 10px;
         margin: 3px 5px;
         font-size: 12px;
+        cursor:pointer;
     }
 </style>
 <script type="text/javascript">
@@ -93,14 +94,14 @@
                 new Ext.BoxComponent({ // raw
                     region:'north',
                     el: 'north',
-                    height:32
+                    height:50
                 }),{
                     region:'west',
                     id:'menu-panel',
                     title:'菜单',
                     split:true,
                     width: 100,
-                    minSize: 85,
+                    minSize: 100,
                     maxSize: 400,
                     collapsible: true,
                     margins:'0 0 0 5',
@@ -110,7 +111,7 @@
                     },
                     items: [{
                         contentEl: 'tcs_menu_info',
-                        title:'系统概况',
+                        title:'系统信息',
                         border:false,
                         iconCls:'nav'
                     },{
@@ -154,8 +155,8 @@
   </div>
 
   <div id="north">
-    <img src="" style="margin:5px" width="25px" height="25px"/>
-    <span style="font-size:30px;"><?php echo ($system_name); ?></span>
+    <img src="/tcs/trunk/Public/assets/pic/tcs_logo.png" style="margin:0px 0 0 5px;" width="42px" height="50px"/>
+    <span style="font-size:30px;font-weight:400"><?php echo ($system_name); ?></span>
   </div>
 
   <div id="tcs_main_panel_sys_summary">正在加载系统概况模块……</div>
