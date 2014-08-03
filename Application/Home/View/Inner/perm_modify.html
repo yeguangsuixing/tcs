@@ -1,0 +1,63 @@
+<html>
+ <head>
+   <title>Perm Modify</title>
+ </head>
+ <script type="text/javascript">
+
+
+
+Ext.onReady(function(){ 
+	var perm_data = [ 
+		['NJ0001', '管理员1', true, false],
+		['NJ0002', '管理员2', 1, 1],
+		['NJ0003', '管理员3', 1, 0],
+		['NJ0004', '管理员4', 1, 0],
+		['NJ0005', '管理员5', 1, 0],
+		['NJ0006', '管理员6', 1, 1],
+		['NJ0007', '管理员7', 1, 1]
+	];
+	var perm_store = new Ext.data.SimpleStore({
+		data: perm_data,
+		fields: ["uid","uname","pcheck", "pcontrol"]
+	});
+	var perm_grid = new Ext.grid.EditorGridPanel({
+		renderTo:"perm_info",
+		title:"权限信息",//height:150, width:500,
+		stripeRows:true, //斑马线效果
+		defaultType: 'checkbox',
+		columns:[
+			{header:"ID",dataIndex:"uid", width:100, sortable:true},
+			{header:"昵称",dataIndex:"uname", sortable:true},
+			{header:"是否可查看",dataIndex:"pcheck", width:180, xtype:"checkbox", inputValue: '1' },
+			{header:"是否可控制",dataIndex:"pcontrol", width:180, xtype:"checkbox", inputValue: '1'}
+		],
+		store:perm_store
+		//autoExpandColumn:6
+	});
+	function SubmitPerm(obj){
+		var rec = obj.record;
+		var uid = rec.get("uid");
+		var uname = rec.get("uname");
+		var pcheck = rec.get("pcheck");
+		var pcontrol = rec.get("pcontrol");
+		//Ext.MessageBox.alert('警告', uname+","+email+","+mobilephone+","+utype);
+		Ext.Ajax.request({
+			url:'__ROOT__/Home/Inner/perm_modify_validate',
+			method:"POST",
+			params:{uid:uid,uname:uname,pcheck:pcheck,pcontrol:pcontrol},
+			success:function(response, options){
+				Ext.example.msg("提示", response.responseText);
+			}
+		});
+
+	}
+	perm_grid.on("afteredit", SubmitPerm, this);
+
+});
+
+ </script>
+ <body>
+    <div id="perm_info" style="margin:5px"></div>
+
+ </body>
+</html>

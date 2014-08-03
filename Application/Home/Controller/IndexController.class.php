@@ -60,4 +60,7 @@ class IndexController extends TcsController {
         $this->data = $Data->select();
         $this->display();
     }
+    public function test(){
+    	$this->show('test!');
+    }
 }

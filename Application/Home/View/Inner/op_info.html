@@ -1,0 +1,66 @@
+<html>
+ <head>
+   <title>Operation Info</title>
+ </head>
+ <script type="text/javascript">
+function mix_attr_renderer(val){
+	var val = ""+val;
+	if(val == "") return '<span style="font-color:gray;">-</span>';
+	else return val;
+}
+Ext.onReady(function(){ 
+	var op_store = new Ext.data.JsonStore({
+		fields:["oid","nid", "nname", "otype", "otime", "nmode","mix_scale", "mix_level", "mix_freq"],
+		url:'__ROOT__/Home/Inner/op_info_list',
+		root:'root',
+		totalProperty:'totalCount'
+	});
+	op_store.load({ params:{ start:0,limit:10 } });
+
+
+	var op_grid = new Ext.grid.GridPanel({
+		renderTo:"op_info",
+		title:"操作信息", 
+		autoHeight: true,//height:400, //width:500,
+		loadMask:true,
+		//viewConfig: { forceFit:true },
+		columns:[
+			//new Ext.grid.RowNumberer(),//增加自动编号，不需要可不必定义
+			{header:"操作ID",dataIndex:"oid", width:50, sortable:true },
+			{header:"节点ID",dataIndex:"nid", width:150, sortable:true},
+			{header:"节点名称",dataIndex:"nname", width:100,sortable:true},
+			{header:"类型",dataIndex:"otype", width:150,sortable:true,
+				renderer:function(val){
+					var val = ""+val;
+					switch(val){
+						case '1':return "设置自动模式数据";
+						case '2':return "设置单次喷洒数据";
+						case '3':return "设置阀门状态";
+						default:return '<span style="font-color:red;">未知操作类型</span>';
+					}
+				}
+			},
+			{header:"操作时间",dataIndex:"otime", width:150, sortable:true},
+			{header:"模式",dataIndex:"nmode", width:50, sortable:true, renderer:mix_attr_renderer },
+			{header:"混合比例",dataIndex:"mix_scale", sortable:true, renderer:mix_attr_renderer},
+			{header:"混合量",dataIndex:"mix_level", sortable:true, renderer:mix_attr_renderer},
+			{header:"喷洒频率",dataIndex:"mix_freq", sortable:true, renderer:mix_attr_renderer}
+		],
+		bbar: new Ext.PagingToolbar({
+			pageSize: 10,
+			store: op_store,
+			displayInfo: true,
+			displayMsg: 'Display {0} - {1} of {2}',
+			emptyMsg: 'Nothing to Display'
+		}),
+		store:op_store,
+		autoExpandColumn:8
+	});
+
+});
+
+ </script>
+ <body>
+    <div id="op_info" style="margin:5px"></div>
+ </body>
+</html>

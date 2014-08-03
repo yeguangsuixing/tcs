@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="__ROOT__/Public/ext-2.0.2/resources/css/ext-all.css"/>
     <script type="text/javascript" src="__ROOT__/Public/ext-2.0.2/adapter/ext/ext-base.js"></script>
     <script type="text/javascript" src="__ROOT__/Public/ext-2.0.2/ext-all.js"></script>
+   <link rel="stylesheet" type="text/css" href="__ROOT__/Public/ext-2.0.2/examples/examples.css" />
 <style type="text/css">
     html, body {
         font:normal 12px verdana;
@@ -31,105 +32,109 @@
     }
 </style>
 <script type="text/javascript">
-    Ext.onReady(function(){
+Ext.example = function(){
+    var msgCt;
+    function createBox(t, s){
+        return ['<div class="msg">',
+                '<div class="x-box-tl"><div class="x-box-tr"><div class="x-box-tc"></div></div></div>',
+                '<div class="x-box-ml"><div class="x-box-mr"><div class="x-box-mc"><h3>', t, '</h3>', s, '</div></div></div>',
+                '<div class="x-box-bl"><div class="x-box-br"><div class="x-box-bc"></div></div></div>',
+                '</div>'].join('');
+    }
+    return {
+        msg : function(title, format){
+            if(!msgCt){
+                msgCt = Ext.DomHelper.insertFirst(document.body, {id:'msg-div'}, true);
+            }
+            msgCt.alignTo(document, 't-t');
+            var s = String.format.apply(String, Array.prototype.slice.call(arguments, 1));
+            var m = Ext.DomHelper.append(msgCt, {html:createBox(title, s)}, true);
+            m.slideIn('t').pause(1).ghost("t", {remove:true});
+        }
+    };
+}();
+Ext.onReady(function(){
 
-        Ext.state.Manager.setProvider(new Ext.state.CookieProvider());
-        
-        var main_tab_panel = new Ext.TabPanel({
-            region:'center',
-            deferredRender:false,
-            activeTab:0,
-            defaults: {autoScroll:true},
-            enableTabScroll: true,
-            items:[{
-                contentEl:'tcs_main_panel_sys_summary',
-                title: '系统概况',
-                autoScroll:true
-            },{
-                contentEl:'tcs_main_panel_area_info',
-                title: '区域信息',
-                closable:true,
-                autoScroll:true
-            },{
-                contentEl:'tcs_main_panel_node_info',
-                title: '节点信息',
-                closable:true,
-                autoScroll:true
-            },{
-                contentEl:'tcs_main_panel_acc_info',
-                title: '账户信息',
-                closable:true,
-                autoScroll:true
-            },{
-                contentEl:'tcs_main_panel_acc_add',
-                title: '账户添加',
-
-                autoScroll:true
-            },{
-                contentEl:'tcs_main_panel_acc_modify',
-                title: '账户修改',
-                closable:true,
-                autoScroll:true
-            },{
-                contentEl:'tcs_main_panel_my_info',
-                title: '个人资料',
-                closable:true,
-                autoScroll:true
-            },{
-                contentEl:'tcs_main_panel_info_modify',
-                title: '资料修改',
-                closable:true,
-                autoScroll:true
-            },{
-                contentEl:'tcs_main_panel_password_modify',
-                title: '密码修改',
-                closable:true,
-                autoScroll:true
-            }]
-        })
-
-        var viewport = new Ext.Viewport({
-            layout:'border',
-            items:[
-                new Ext.BoxComponent({ // raw
-                    region:'north',
-                    el: 'north',
-                    height:50
-                }),{
-                    region:'west',
-                    id:'menu-panel',
-                    title:'菜单',
-                    split:true,
-                    width: 100,
-                    minSize: 100,
-                    maxSize: 400,
-                    collapsible: true,
-                    margins:'0 0 0 5',
-                    layout:'accordion',
-                    layoutConfig:{
-                        animate:true
-                    },
-                    items: [{
-                        contentEl: 'tcs_menu_info',
-                        title:'系统信息',
-                        border:false,
-                        iconCls:'nav'
-                    },{
-                        contentEl: 'tcs_menu_acc',
-                        title:'账户管理',
-                        border:true,
-                        iconCls:'nav'
-                    },{
-                        contentEl: 'tcs_menu_mine',
-                        title:'我的账户',
-                        border:false,
-                        iconCls:'settings'
-                    }]
-                },
-                main_tab_panel
-             ]
-        });
+    Ext.state.Manager.setProvider(new Ext.state.CookieProvider());
+    
+    var main_tab_panel = new Ext.TabPanel({
+        id:'mainTabPanel',
+        region:'center',
+        deferredRender:false,
+        activeTab:0,
+        defaults: {autoScroll:true},
+        enableTabScroll: true
     });
+
+    var viewport = new Ext.Viewport({
+        layout:'border',
+        items:[
+            new Ext.BoxComponent({ // raw
+                region:'north',
+                el: 'north',
+                height:50
+            }),{
+                region:'west',
+                id:'menu-panel',
+                title:'菜单',
+                split:true,
+                width: 100,
+                minSize: 100,
+                maxSize: 400,
+                collapsible: true,
+                margins:'0 0 0 5',
+                layout:'accordion',
+                layoutConfig:{
+                    animate:true
+                },
+                items: [{
+                    contentEl: 'tcs_menu_info',
+                    title:'系统信息',
+                    border:false,
+                    iconCls:'nav'
+                },{
+                    contentEl: 'tcs_menu_acc',
+                    title:'账户管理',
+                    border:true,
+                    iconCls:'nav'
+                },{
+                    contentEl: 'tcs_menu_mine',
+                    title:'我的账户',
+                    border:false,
+                    iconCls:'settings'
+                }]
+            },
+            main_tab_panel
+         ]
+    });
+
+    addTcsTab(document.getElementById('tcs_menu_item_sys_summary'), '__ROOT__/Home/Inner/system_summary', true);
+});
+
+function addTcsTab(elem, turl, isclosable) {
+    var tid = elem.id.replace("item", "panel");
+    var mainTabPanel = Ext.getCmp('mainTabPanel');
+    var tp = Ext.getCmp(tid);
+    if (tp != null) {
+        tp.show();
+        return;
+    }
+
+    tp = new Ext.TabPanel({
+        id:tid,
+        title: elem.innerText,
+        closable:!isclosable,
+        autoScroll:true,
+        frame:true,
+        //header:'none',
+        autoLoad:{
+            url:turl,
+            scripts:true,
+            script:true
+        }
+    });
+    mainTabPanel.add(tp).show();
+}
     </script>
 
 
@@ -139,39 +144,33 @@
 
 
   <div id="tcs_menu_info">
-        <div class="tcs_menu_item" id="tcs_menu_item_sys_summary">系统概况</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_area_info">区域信息</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_node_info">节点信息</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_sys_summary" onclick="addTcsTab(this, '__ROOT__/Home/Inner/system_summary')">系统概况</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_area_info" onclick="addTcsTab(this, '__ROOT__/Home/Inner/area_info')">区域信息</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_node_info" onclick="addTcsTab(this, '__ROOT__/Home/Inner/node_info')">节点信息</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_op_info" onclick="addTcsTab(this, '__ROOT__/Home/Inner/op_info')">操作信息</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_msg_info" onclick="addTcsTab(this, '__ROOT__/Home/Inner/msg_info')">短信信息</div>
   </div>
   <div id="tcs_menu_acc">
-        <div class="tcs_menu_item" id="tcs_menu_item_acc_info">账户信息</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_acc_add">账户添加</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_acc_modify">账户修改</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_acc_info" onclick="addTcsTab(this, '__ROOT__/Home/Inner/acc_info')">账户信息</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_acc_add" onclick="addTcsTab(this, '__ROOT__/Home/Inner/acc_add')">账户添加</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_perm_modify" onclick="addTcsTab(this, '__ROOT__/Home/Inner/perm_modify')">权限修改</div>
   </div>
   <div id="tcs_menu_mine">
-        <div class="tcs_menu_item" id="tcs_menu_item_my_info">我的资料</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_info_modify">资料修改</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_password_modify">密码修改</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_my_info" onclick="addTcsTab(this, 'test')">我的资料</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_info_modify" onclick="addTcsTab(this, 'test')">资料修改</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_password_modify" onclick="addTcsTab(this, '__ROOT__/Home/Inner/password_modify')">密码修改</div>
   </div>
 
   <div id="north">
-    <img src="__ROOT__/Public/assets/pic/tcs_logo.png" style="margin:0px 0 0 5px;" width="42px" height="50px"/>
-    <span style="font-size:30px;font-weight:400">{$system_name}</span>
+    <span style="font-size:40px;font-weight:400;margin-left:50px">{$system_name}</span>
   </div>
 
-  <div id="tcs_main_panel_sys_summary">正在加载系统概况模块……</div>
-  <div id="tcs_main_panel_area_info">正在加载区域信息模块……</div>
-  <div id="tcs_main_panel_node_info">正在加载节点概况模块……</div>
-  <div id="tcs_main_panel_acc_info">正在加载账户信息模块……</div>
-  <div id="tcs_main_panel_acc_add">正在加载账户添加修改模块……</div>
-  <div id="tcs_main_panel_acc_modify">正在加载账户修改模块……</div>
-  <div id="tcs_main_panel_my_info">正在加载个人资料模块……</div>
-  <div id="tcs_main_panel_info_modify">正在加载资料修改模块……</div>
-  <div id="tcs_main_panel_password_modify">正在加载密码修改模块……</div>
 
-  <div id="props-panel" style="width:200px;height:200px;overflow:hidden;">
-  </div>
+ 
+<script language="javascript">
+    
 
+</script>
 
  </body>
 </html>

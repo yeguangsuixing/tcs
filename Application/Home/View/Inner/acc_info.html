@@ -1,0 +1,103 @@
+<html>
+ <head>
+   <title>Account Info</title>
+ </head>
+ <script type="text/javascript">
+
+
+
+Ext.onReady(function(){ 
+	var acc_data = [ 
+		['NJ0001', '管理员1', '2014年8月3日16:01:51', '2014年8月3日17:36:31', 'nj0001@tcs.com', '15900000001', 2],
+		['NJ0002', '管理员2', '2014年8月3日16:01:51', '2014年8月3日17:36:31', 'nj0002@tcs.com', '15900000002', 2],
+		['NJ0003', '管理员3', '2014年8月3日16:01:51', '2014年8月3日17:36:31', 'nj0003@tcs.com', '15900000003', 3],
+		['NJ0004', '管理员4', '2014年8月3日16:01:51', '2014年8月3日17:36:31', 'nj0004@tcs.com', '15900000004', 3],
+		['NJ0005', '管理员5', '2014年8月3日16:01:51', '2014年8月3日17:36:31', 'nj0005@tcs.com', '15900000005', 3],
+		['NJ0006', '管理员6', '2014年8月3日16:01:51', '2014年8月3日17:36:31', 'nj0006@tcs.com', '15900000006', 2],
+		['NJ0007', '管理员7', '2014年8月3日16:01:51', '2014年8月3日17:36:31', 'nj0007@tcs.com', '15900000007', 2]
+	];
+	var acc_store = new Ext.data.SimpleStore({
+		data: acc_data,
+		fields: ["uid","uname","create_time", "last_login", "email", "mobilephone", "utype"]
+	});
+	var acc_grid = new Ext.grid.EditorGridPanel({
+		renderTo:"acc_info",
+		title:"账户信息",//height:150, width:500,
+		columns:[
+			{header:"ID",dataIndex:"uid", width:100, sortable:true},
+			{header:"昵称",dataIndex:"uname", sortable:true, 
+				editor: new Ext.form.TextField({
+					allowBlank: false
+				})
+			},
+			{header:"创建时间",dataIndex:"create_time", width:180, sortable:true},
+			{header:"上次登录时间",dataIndex:"last_login", width:180, sortable:true},
+			{header:"邮箱",dataIndex:"email", width:180, sortable:true, 
+				editor: new Ext.form.TextField({
+					allowBlank: false,
+					vtype:'email'
+				})
+			},
+			{header:"手机号",dataIndex:"mobilephone", width:180, sortable:true, 
+				editor: new Ext.form.TextField({
+					allowBlank: false,
+					minLength:11,
+					maxLength:11,
+					validator:function(val){
+						return /1[3-8]{1}\d{9}/.test(val);
+					}
+				})
+			},
+			{header:"角色",dataIndex:"utype", sortable:true, 
+				renderer:function(val){
+					val = ""+val;
+					switch(val){
+						case '2':return "普通管理员";
+						case '3':return "巡检员";
+						default:return '<span style="font-color:red">错误</span>';
+					}
+				},
+				editor:new Ext.form.ComboBox({
+					transform:"utypeList",  //可编辑下拉菜单
+					triggerAction: 'all',
+					lazyRender:true
+				})
+			}
+		],
+		store:acc_store
+		//autoExpandColumn:6
+	});
+	function SubmitAcc(obj){
+		var rec = obj.record;
+		var uid = rec.get("uid");
+		var uname = rec.get("uname");
+		var email = rec.get("email");
+		var mobilephone = rec.get("mobilephone");
+		var utype = rec.get("utype");
+		//alert(uname+","+email+","+mobilephone+","+utype);
+		//Ext.MessageBox.alert('警告', uname+","+email+","+mobilephone+","+utype);
+		Ext.Ajax.request({
+			url:'__ROOT__/Home/Inner/acc_info_modify',
+			method:"GET",
+			params:{uid:uid,uname:uname,email:email,mobilephone:mobilephone,utype:utype},
+			success:function(response, options){
+				//Ext.MessageBox.alert('警告', response.responseText);
+				Ext.example.msg("提示", response.responseText);
+			}
+		});
+
+	}
+	acc_grid.on("afteredit", SubmitAcc, this);
+
+});
+
+ </script>
+ <body>
+    <div id="acc_info" style="margin:5px"></div>
+
+    <select id="utypeList" name="utypeList">
+    	<option value="2">普通管理员</option>
+    	<option value="3">巡检员</option>
+    </select>
+ </body>
+</html>

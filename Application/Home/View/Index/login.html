@@ -27,7 +27,7 @@ Ext.onReady(function(){
         //url:'login_validate.php',
         frame:true,
         title: '{$login_title}',
-        style:'margin:auto;padding:150px 0 0;',
+        style:'padding-top:150px;margin:auto',
         width: 350,
         defaults: {width: 230},
         defaultType:'textfield',
@@ -62,12 +62,15 @@ Ext.onReady(function(){
         }]
     });
 
-    simple.render(document.body);
+    simple.render(document.getElementById('login_div'));
     function tlogin(){
     	simple.form.submit();
     }
 
 });
 </script>
+<div id="login_div">
+
+</div>
  </body>
 </html>

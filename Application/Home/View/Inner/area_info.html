@@ -1,0 +1,72 @@
+<html>
+ <head>
+   <title>Area Info</title>
+ </head>
+ <script type="text/javascript">
+Ext.onReady(function(){ 
+	var province_data = [ 
+		[1, '江苏省', '2014年8月3日16:01:51'],
+		[2, '浙江省', '2014年8月3日16:01:51'], 
+		[3, '北京市', '2014年8月3日16:01:51'],
+		[4, '上海市', '2014年8月3日16:01:51']
+	];
+	var province_store = new Ext.data.SimpleStore({data:province_data,fields:["id","name","time"]});
+	var province_grid = new Ext.grid.GridPanel({
+		renderTo:"province_info",
+		title:"省份信息",//height:150, width:500,
+		columns:[{header:"省份ID",dataIndex:"id"},
+			{header:"省份名称",dataIndex:"name"},
+			{header:"加入时间",dataIndex:"time"}],
+		store:province_store,
+		autoExpandColumn:2
+	});
+
+	var city_data = [
+		[1, '南京市', '2014年8月2日23:53:13', '江苏省'],
+		[2, '镇江市', '2014年8月2日23:53:13', '江苏省'],
+		[3, '北京市', '2014年8月2日23:53:13', '北京市'],
+		[4, '南通市', '2014年8月2日23:53:13', '江苏省'],
+		[5, '上海市', '2014年8月2日23:53:13', '上海市'],
+	];
+	var city_store = new Ext.data.SimpleStore({data:city_data,fields:["id","name", "time","province"]});
+	var city_grid = new Ext.grid.GridPanel({
+		renderTo:"city_info",
+		title:"城市信息",//height:150, width:500,
+		columns:[{header:"城市ID",dataIndex:"id"},
+			{header:"城市名称",dataIndex:"name"},
+			{header:"所属省份",dataIndex:"province"},
+			{header:"加入时间",dataIndex:"time"}
+		],
+		store:city_store,
+		autoExpandColumn:3
+	});
+
+	var district_data = [
+		[1, '鼓楼区', '2014年8月2日23:53:13', '南京市', '江苏省'],
+		[2, '下关区', '2014年8月2日23:53:13', '南京市', '江苏省'],
+		[3, '建邺区', '2014年8月2日23:53:13', '南京市', '江苏省'],
+		[4, '雨花台区', '2014年8月2日23:53:13', '南京市', '江苏省'],
+		[5, '浦口区', '2014年8月2日23:53:13', '南京市', '江苏省'],
+	];
+	var district_store = new Ext.data.SimpleStore({data:district_data,fields:["id","name", "time", "city","province"]});
+	var district_grid = new Ext.grid.GridPanel({
+		renderTo:"district_info",
+		title:"区县信息",//height:150, width:500,
+		columns:[{header:"区县ID",dataIndex:"id"},
+			{header:"区县名称",dataIndex:"name"},
+			{header:"所属城市",dataIndex:"city"},
+			{header:"所属省份",dataIndex:"province"},
+			{header:"加入时间",dataIndex:"time"}
+		],
+		store:district_store,
+		autoExpandColumn:4
+	});
+});
+
+ </script>
+ <body>
+    <div id="province_info" style="margin:5px"></div>
+    <div id="city_info" style="margin:5px"></div>
+    <div id="district_info" style="margin:5px"></div>
+ </body>
+</html>

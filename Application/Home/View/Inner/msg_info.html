@@ -1,0 +1,52 @@
+<html>
+ <head>
+   <title>Message Info</title>
+ </head>
+ <script type="text/javascript">
+function mix_attr_renderer(val){
+	val = ""+val;
+	if(val == "") return '<span style="font-color:gray;">-</span>';
+	else return val;
+}
+Ext.onReady(function(){ 
+	var msg_store = new Ext.data.JsonStore({
+		fields:["uid","uname", "mtime", "mcontent"],
+		url:'__ROOT__/Home/Inner/msg_info_list',
+		root: 'root',
+        totalProperty: 'totalCount'
+        //id: 'uid',
+	});
+	msg_store.load({ params:{ start:0,limit:10 } });
+
+
+	var msg_grid = new Ext.grid.GridPanel({
+		renderTo:"msg_info",
+		title:"短信信息", 
+		autoHeight: true,//height:400, //width:500,
+		loadMask:true,
+		//viewConfig: { forceFit:true },
+		columns:[
+			//new Ext.grid.RowNumberer(),//增加自动编号，不需要可不必定义
+			{header:"用户ID",dataIndex:"uid", width:50, sortable:true },
+			{header:"用户昵称",dataIndex:"uname", width:100, sortable:true},
+			{header:"发送时间",dataIndex:"mtime", width:200,sortable:true},
+			{header:"内容",dataIndex:"mcontent", sortable:true}
+		],
+		bbar: new Ext.PagingToolbar({
+			pageSize: 10,
+			store: msg_store,
+			displayInfo: true,
+			displayMsg: 'Display {0} - {1} of {2}',
+			emptyMsg: 'Nothing to Display'
+		}),
+		store:msg_store,
+		autoExpandColumn:3
+	});
+
+});
+
+ </script>
+ <body>
+    <div id="msg_info" style="margin:5px"></div>
+ </body>
+</html>
