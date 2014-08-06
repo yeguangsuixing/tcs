@@ -1,0 +1,194 @@
+<html>
+ <head>
+   <title>Node Info</title>
+ </head>
+ <script type="text/javascript">
+Ext.onReady(function(){ 
+
+    Ext.QuickTips.init();
+    Ext.form.Field.prototype.msgTarget = 'side';//'qtip';//'under';
+
+	var node_store = new Ext.data.JsonStore({
+		//data:node_data,
+		idPropery:"id",
+		//remoteSort:true,
+		fields:["id","name", "lng", "lat", "first_access", "last_access", 
+			"nmode", "auto_mix_scale", "auto_mix_level", "auto_mix_freq", 
+			"district", "city", "province"],
+		url:'__ROOT__/Home/Inner/node_info_list' //使用相同数据源
+	});
+	node_store.load({ params:{ start:0,limit:6 } });
+	var node_grid = new Ext.grid.GridPanel({
+		renderTo:"node_info",
+		title:"节点信息", 
+		autoHeight: true,//height:400, //width:500,
+		loadMask:true,
+		stripeRow:true,
+		//viewConfig: { forceFit:true },
+		rowdblclick:function(row){
+			alert(row);
+		},
+		columns:[
+			new Ext.grid.RowNumberer(),//增加自动编号，不需要可不必定义
+			{header:"ID",dataIndex:"id", width:150, sortable:true, 
+				renderer:function(val){
+					return val;
+					//return '<a href="javascript:(0)" onclick="ShowNodeEditPanel(this)">'+val+'</a>';
+				} 
+			},
+			{header:"名称",dataIndex:"name", sortable:true},
+			{header:"经度",dataIndex:"lng", width:100,sortable:true},
+			{header:"纬度",dataIndex:"lat", width:100,sortable:true},
+			{header:"创建时间",dataIndex:"first_access", width:150, sortable:true},
+			{header:"停止时间",dataIndex:"last_access", width:150, sortable:true},
+			{header:"模式",dataIndex:"nmode", width:50, sortable:true,
+				renderer:function(val){
+					val = "" + val;
+					switch(val){
+						case '0': return "自动";
+						case '1': return "手动";
+						default: return "未知"+val+"位置";
+					}
+				}
+			},
+			{header:"混合比例",dataIndex:"auto_mix_scale", sortable:true},
+			{header:"混合量",dataIndex:"auto_mix_level", sortable:true},
+			{header:"喷洒频率",dataIndex:"auto_mix_freq", sortable:true},
+			{header:"所属区县",dataIndex:"district", sortable:true},
+			{header:"所属城市",dataIndex:"city", sortable:true},
+			{header:"所属省份",dataIndex:"province", sortable:true}
+		],
+		bbar: new Ext.PagingToolbar({
+			pageSize: 6,
+			store: node_store,
+			displayInfo: true,
+			displayMsg: 'Display nodes {0} - {1} of {2}',
+			emptyMsg: 'Nothing to Display'
+		}),
+		store:node_store//, autoExpandColumn:2
+	});
+	var win;
+	node_grid.addListener("rowclick", function(sm, rowIndex, e){
+		var selmodel = node_grid.getSelectionModel();
+		var rec = selmodel.getSelected();
+		//alert(rec.data["id"]);
+		if(!win){
+			document.getElementById('nmodeList').style.display="";
+			var node_edit_form = new Ext.FormPanel({
+		        labelWidth: 75,
+		        frame:true,
+		        title: '{$login_title}',
+		        //style:'padding-top:150px;margin:auto',
+		        width: 350,
+		        defaults: {width: 230},
+		        defaultType:'textfield',
+		        //layout:"form",
+		        items: [{
+	                fieldLabel: 'ID',
+	                id:'nid',
+	                name: 'nid',
+	                disabled:true//readOnly:true
+	            },{
+	                fieldLabel: '昵称',
+	                id:'nname',
+	                name: 'nname',
+	                allowBlank:true,
+	                maxLength:20
+	            },{
+	                fieldLabel: '经纬度',
+	                id:'nlocation',
+	                name: 'nlocation',
+	                disabled:true
+	            },{
+	                fieldLabel: '地理位置',
+	                id:'nposition',
+	                name: 'nposition',
+	                disabled:true
+	            },{
+	                fieldLabel: '模式',
+	                id:'nmode',
+	                name: 'nmode',
+	                xtype:'combo',
+	                transform:"nmodeList",
+					triggerAction:'all',
+					lazyRender:true
+	            },{
+	                fieldLabel: '混合比例',
+	                id:'mix_scale',
+	                name: 'mix_scale',
+	                allowBlank:true,
+	            },{
+	                fieldLabel: '混合量',
+	                id:'mix_level',
+	                name: 'mix_level',
+	                allowBlank:true,
+	            },{
+	                fieldLabel: '喷洒频率',
+	                id:'mix_freq',
+	                name: 'mix_freq',
+	                allowBlank:true,
+	            }]
+		    });
+	        win = new Ext.Window({
+	            //el:'node_edit_div',
+	            title:'节点编辑',
+	            layout:'form',
+	            width:360,
+	            height:100,
+	            closeAction:'hide',
+	            plain: true,
+	            modal:true,
+	            items: node_edit_form,
+	            buttons: [{
+	                text:'提交',
+	                handler:function(){
+	                	Ext.Ajax.request({
+							url:'__ROOT__/Home/Innerf/node_edit',
+							method:"GET",
+							params:{
+								nid:Ext.getCmp('nid').getValue(),
+								nname:Ext.getCmp('nname').getValue(),
+								//
+								mix_scale:Ext.getCmp('mix_scale').getValue(),
+								mix_level:Ext.getCmp('mix_level').getValue(),
+								mix_freq:Ext.getCmp('mix_freq').getValue()
+							},
+							success:function(response, options){
+								//Ext.MessageBox.alert('警告', response.responseText);
+								win.hide();
+								Ext.example.msg("提示", response.responseText);
+							}
+						});
+	                }
+	            },{
+	                text: '取消修改',
+	                handler: function(){
+	                    win.hide();
+	                }
+	            }]
+	        });
+		}
+		//
+		Ext.getCmp('nid').setValue(rec.data["id"]);
+		Ext.getCmp('nname').setValue(rec.data["name"]);
+		Ext.getCmp('nlocation').setValue(rec.data["lng"]+", "+rec.data["lat"]);
+		//alert(rec.data["nmode"]);
+		Ext.getCmp('nposition').setValue(rec.data["province"]+", "+rec.data["city"]+", "+rec.data["district"]);
+		Ext.getCmp('mix_scale').setValue(rec.data["auto_mix_scale"]);
+		Ext.getCmp('mix_level').setValue(rec.data["auto_mix_level"]);
+		Ext.getCmp('mix_freq').setValue(rec.data["auto_mix_freq"]);
+        win.show();
+
+	});
+});
+
+ </script>
+ <body>
+    <div id="node_info" style="margin:5px"></div>
+    <div id="node_edit_div"></div>
+    <select id="nmodeList" style="display:none">
+    	<option value="0">自动</option>
+    	<option value="1">手动</option>
+    </select>
+ </body>
+</html>

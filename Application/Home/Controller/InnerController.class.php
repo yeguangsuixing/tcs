@@ -4,7 +4,8 @@ namespace Home\Controller;
 class InnerController extends TcsController {
 
 	public function system_summary(){
-		$this->show('system_summary');
+		//$this->show('system_summary');
+		$this->display();
 	}
 
 	public function area_info(){

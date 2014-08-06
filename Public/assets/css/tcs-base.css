@@ -1,0 +1,24 @@
+html, body {
+    font:normal 12px verdana;
+    margin:0;
+    padding:0;
+    border:0 none;
+    overflow:hidden;
+    height:100%;
+}
+p {
+    margin:5px;
+}
+.settings {
+    background-image:url(../../ext-2.0.2/examples/shared/icons/fam/folder_wrench.png);
+}
+.nav {
+    background-image:url(../../ext-2.0.2/examples/shared/icons/fam/folder_go.png);
+}
+.tcs_menu_item{
+    text-align: left;
+    padding: 0 0 0 10px;
+    margin: 3px 5px;
+    font-size: 12px;
+    cursor:pointer;
+}

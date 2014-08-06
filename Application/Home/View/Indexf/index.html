@@ -44,14 +44,9 @@ Ext.onReady(function(){
                     animate:true
                 },
                 items: [{
-                    contentEl: 'tcs_menu_info',
-                    title:'系统信息',
+                    contentEl: 'tcs_menu_node',
+                    title:'节点管理',
                     border:false,
-                    iconCls:'nav'
-                },{
-                    contentEl: 'tcs_menu_acc',
-                    title:'账户管理',
-                    border:true,
                     iconCls:'nav'
                 },{
                     contentEl: 'tcs_menu_mine',
@@ -64,7 +59,7 @@ Ext.onReady(function(){
          ]
     });
 
-    addTcsTab(document.getElementById('tcs_menu_item_sys_summary'), '__ROOT__/Home/Inner/system_summary', true);
+    addTcsTab(document.getElementById('tcs_menu_item_node_map'), '__ROOT__/Home/Innerf/node_map', false);
 });
 
 function addTcsTab(elem, turl, isclosable) {
@@ -99,22 +94,13 @@ function addTcsTab(elem, turl, isclosable) {
  <body>
 
 
-  <div id="tcs_menu_info">
-        <div class="tcs_menu_item" id="tcs_menu_item_sys_summary" onclick="addTcsTab(this, '__ROOT__/Home/Inner/system_summary')">系统概况</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_area_info" onclick="addTcsTab(this, '__ROOT__/Home/Inner/area_info')">区域信息</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_node_info" onclick="addTcsTab(this, '__ROOT__/Home/Inner/node_info')">节点信息</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_op_info" onclick="addTcsTab(this, '__ROOT__/Home/Inner/op_info')">操作信息</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_msg_info" onclick="addTcsTab(this, '__ROOT__/Home/Inner/msg_info')">短信信息</div>
-  </div>
-  <div id="tcs_menu_acc">
-        <div class="tcs_menu_item" id="tcs_menu_item_acc_info" onclick="addTcsTab(this, '__ROOT__/Home/Inner/acc_info')">账户信息</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_acc_add" onclick="addTcsTab(this, '__ROOT__/Home/Inner/acc_add')">账户添加</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_perm_modify" onclick="addTcsTab(this, '__ROOT__/Home/Inner/perm_modify')">权限修改</div>
+  <div id="tcs_menu_node">
+        <div class="tcs_menu_item" id="tcs_menu_item_node_map" onclick="addTcsTab(this, '__ROOT__/Home/Innerf/node_map')">节点地图</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_node_table" onclick="addTcsTab(this, '__ROOT__/Home/Innerf/node_table')">节点表格</div>
   </div>
   <div id="tcs_menu_mine">
-        <div class="tcs_menu_item" id="tcs_menu_item_my_info" onclick="addTcsTab(this, 'test')">我的资料</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_info_modify" onclick="addTcsTab(this, 'test')">资料修改</div>
-        <div class="tcs_menu_item" id="tcs_menu_item_password_modify" onclick="addTcsTab(this, '__ROOT__/Home/Inner/password_modify')">密码修改</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_my_info" onclick="addTcsTab(this, '__ROOT__/Home/Innerf/my_info')">我的资料</div>
+        <div class="tcs_menu_item" id="tcs_menu_item_password_modify" onclick="addTcsTab(this, '__ROOT__/Home/Innerf/password_modify')">密码修改</div>
   </div>
 
   <div id="north">
