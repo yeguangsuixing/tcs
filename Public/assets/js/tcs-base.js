@@ -21,3 +21,7 @@ Ext.example = function(){
         }
     };
 }();
+
+String.prototype.evalJSON = function(){
+    return eval('(' + this + ')');
+}

@@ -1,10 +1,110 @@
 <html>
  <head>
    <title>Node Map</title>
- </head>
+</head>
+<body>
+<div id="l-map"></div>
+<!--城市列表-->
+<div class="sel_container"><strong id="curCity">南京市</strong> [<a id="curCityText" href="javascript:void(0)">更换城市</a>]</div>
+<div class="city_list_popup" id="cityList" style="display:none;">
+	<div class="city_list_popup_main">
+		<div class="title">城市列表</div>
+		<div class="cityList" id="citylist_container"></div>
+		<button id="popup_close"></button>
+	</div>
+</div>
+</body>
 
- <body>
-节点地图--by百度地图
+<script type="text/javascript">
+// 百度地图API功能
+var map = new BMap.Map("l-map");
+var point = new BMap.Point(118.79063,32.04799);
+map.centerAndZoom(point, 15);
+map.enableScrollWheelZoom();
+map.addControl(new BMap.NavigationControl());  //添加默认缩放平移控件
+var customLayer;
+function addCustomLayer(keyword) {
+    if (customLayer) {
+        map.removeTileLayer(customLayer);
+    }
+    customLayer=new BMap.CustomLayer({
+        geotableId: 74312,
+        q: '', //检索关键字
+        tags: '', //空格分隔的多字符串
+        filter: '' //过滤条件,参考http://developer.baidu.com/map/lbs-geosearch.htm#.search.nearby
+    });
+    map.addTileLayer(customLayer);
+    customLayer.addEventListener('hotspotclick', callback);
+}
+addCustomLayer();
 
- </body>
+var syn_lock_modify = false;//伪同步锁
+function callback(e){
+	var customPoi = e.customPoi;//poi的默认字段
+	var contentPoi=e.content;//poi的自定义字段
+	//var content = '<p style="width:280px;margin:0;line-height:20px;">地址：' + customPoi.address + '<br/>价格:'+contentPoi.dayprice+'元'+'</p>';
+	//alert(customPoi.poiId);
+	if(syn_lock_modify){
+		Ext.example.msg("提示","请等待上一次提交完成！");return;
+	}
+	syn_lock_modify = true;
+	Ext.Ajax.request({
+		url:'__ROOT__/Home/Innerf/node_info_single',
+		params:{baidu_id:customPoi.poiId},
+		success:function(response,options){
+			var nodeinfo = response.responseText.evalJSON();
+			var w = getNodeEditWindow("节点编辑", "__ROOT__/Home/Innerf/node_edit", document.getElementById('nmodeList'),
+				nodeinfo.id,
+				nodeinfo.name, 
+				nodeinfo.location,
+				nodeinfo.position,
+				nodeinfo.mode,
+				nodeinfo.scale,
+				nodeinfo.level,
+				nodeinfo.freq
+			);
+		    w.show();
+		    syn_lock_modify = false;
+		},
+		failure:function(){
+			Ext.example.msg("错误", "修改失败！");
+		    syn_lock_modify = false;
+		}
+	});
+	
+}
+
+
+// 创建CityList对象，并放在citylist_container节点内
+var myCl = new BMapLib.CityList({container : "citylist_container", map : map});
+// 给城市点击时，添加相关操作
+myCl.addEventListener("cityclick", function(e) {
+	// 修改当前城市显示
+	document.getElementById("curCity").innerHTML = e.name;
+	// 点击后隐藏城市列表
+	document.getElementById("cityList").style.display = "none";
+});
+
+// 给“更换城市”链接添加点击操作
+document.getElementById("curCityText").onclick = function() {
+	var cl = document.getElementById("cityList");
+	if (cl.style.display == "none") {
+		cl.style.display = "";
+	} else {
+		cl.style.display = "none";
+	}	
+};
+
+// 给城市列表上的关闭按钮添加点击操作
+document.getElementById("popup_close").onclick = function() {
+	var cl = document.getElementById("cityList");
+	if (cl.style.display == "none") {
+		cl.style.display = "";
+	} else {
+		cl.style.display = "none";
+	}	
+};
+
+
+</script>
 </html>

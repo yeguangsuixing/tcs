@@ -7,6 +7,76 @@
     <script type="text/javascript" src="__ROOT__/Public/assets/js/tcs-base.js"></script>
    <link rel="stylesheet" type="text/css" href="__ROOT__/Public/ext-2.0.2/examples/examples.css" />
    <link rel="stylesheet" type="text/css" href="__ROOT__/Public/assets/css/tcs-base.css" />
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5d3369b3dce55c2630ae9b29711b2232"></script>
+<!-- 加载百度地图样式信息窗口 -->
+<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+<!-- 加载城市列表 -->
+<script type="text/javascript" src="http://api.map.baidu.com/library/CityList/1.2/src/CityList_min.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/assets/js/node-edit.js"></script>
+
+
+<style type="text/css">
+
+#l-map {
+    height: 100%;
+    overflow: hidden;
+}
+.cityList{
+    height: 320px;
+    width:372px;
+    overflow-y:auto;
+}
+.sel_container{
+    z-index:9999;
+    font-size:12px;
+    position:absolute;
+    right:0px;
+    top:33px;
+    width:140px;
+    background:rgba(255,255,255,0.8);
+    height:30px;
+    line-height:30px;
+    padding:5px;
+}
+.city_list_popup {
+    position: absolute;
+    z-index: 200000;
+    width: 382px;
+    height: 344px;
+    right:0px;
+    top:73px;
+}
+.city_list_popup .city_list_popup_main { 
+    background:#fff;
+    border: 1px solid #8BA4D8;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+.city_list_popup .title {
+    background: url("http://map.baidu.com/img/popup_title.gif") repeat scroll 0 0 transparent;
+    color: #6688CC;
+    font-size: 12px;
+    font-weight: bold;
+    height: 24px;
+    line-height: 25px;
+    padding-left: 7px;
+}
+.city_list_popup button {
+    background: url("http://map.baidu.com/img/popup_close.gif") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    height: 12px;
+    position: absolute;
+    right: 4px;top: 6px;
+    width: 12px;
+}    
+
+</style>
 <script type="text/javascript">
 
 Ext.onReady(function(){
@@ -108,6 +178,10 @@ function addTcsTab(elem, turl, isclosable) {
   </div>
 
 
+<select id="nmodeList" style="display:none">
+    <option value="0">自动</option>
+    <option value="1">手动</option>
+</select>
  
 <script language="javascript">
     

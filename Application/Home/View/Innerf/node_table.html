@@ -3,10 +3,13 @@
    <title>Node Info</title>
  </head>
  <script type="text/javascript">
+
+
 Ext.onReady(function(){ 
 
     Ext.QuickTips.init();
     Ext.form.Field.prototype.msgTarget = 'side';//'qtip';//'under';
+
 
 	var node_store = new Ext.data.JsonStore({
 		//data:node_data,
@@ -17,7 +20,45 @@ Ext.onReady(function(){
 			"district", "city", "province"],
 		url:'__ROOT__/Home/Inner/node_info_list' //使用相同数据源
 	});
-	node_store.load({ params:{ start:0,limit:6 } });
+
+	var node_query_panel = new Ext.FormPanel({
+        labelWidth: 75,
+        frame:true,
+        title: '{$login_title}',
+        renderTo:'node_query',
+        bodyStyle:{height:60},
+        //height:100,
+        width: 350,
+        defaults: {width: 230},
+        defaultType:'textfield',
+        //layout:"form",
+        buttonAlign:'right',
+        items:[{
+            xtype:'textfield',
+            fieldLabel: '节点名称',
+            id:'node_query_nname',
+            name: 'node_query_nname'
+        },{
+        	xtype:'textfield',
+            fieldLabel: '节点位置',
+            id:'node_query_nposition',
+            name: 'node_query_nposition'
+        }],
+        buttons:[{
+            text: '查找',
+            handler:function(){
+            	//Ext.example.msg('查找',"查找");
+            	node_store.reload({
+            		start:0,
+            		limit:10, 
+            		name:Ext.getCmp('node_query_nname').getValue(), 
+            		position:Ext.getCmp('node_query_nposition').getValue() 
+            	});
+            }
+        }]
+    });
+
+	node_store.load({ params:{ start:0,limit:10 } });
 	var node_grid = new Ext.grid.GridPanel({
 		renderTo:"node_info",
 		title:"节点信息", 
@@ -29,7 +70,7 @@ Ext.onReady(function(){
 			alert(row);
 		},
 		columns:[
-			new Ext.grid.RowNumberer(),//增加自动编号，不需要可不必定义
+			new Ext.grid.RowNumberer(),
 			{header:"ID",dataIndex:"id", width:150, sortable:true, 
 				renderer:function(val){
 					return val;
@@ -59,7 +100,7 @@ Ext.onReady(function(){
 			{header:"所属省份",dataIndex:"province", sortable:true}
 		],
 		bbar: new Ext.PagingToolbar({
-			pageSize: 6,
+			pageSize: 10,
 			store: node_store,
 			displayInfo: true,
 			displayMsg: 'Display nodes {0} - {1} of {2}',
@@ -67,128 +108,31 @@ Ext.onReady(function(){
 		}),
 		store:node_store//, autoExpandColumn:2
 	});
-	var win;
 	node_grid.addListener("rowclick", function(sm, rowIndex, e){
 		var selmodel = node_grid.getSelectionModel();
 		var rec = selmodel.getSelected();
 		//alert(rec.data["id"]);
-		if(!win){
-			document.getElementById('nmodeList').style.display="";
-			var node_edit_form = new Ext.FormPanel({
-		        labelWidth: 75,
-		        frame:true,
-		        title: '{$login_title}',
-		        //style:'padding-top:150px;margin:auto',
-		        width: 350,
-		        defaults: {width: 230},
-		        defaultType:'textfield',
-		        //layout:"form",
-		        items: [{
-	                fieldLabel: 'ID',
-	                id:'nid',
-	                name: 'nid',
-	                disabled:true//readOnly:true
-	            },{
-	                fieldLabel: '昵称',
-	                id:'nname',
-	                name: 'nname',
-	                allowBlank:true,
-	                maxLength:20
-	            },{
-	                fieldLabel: '经纬度',
-	                id:'nlocation',
-	                name: 'nlocation',
-	                disabled:true
-	            },{
-	                fieldLabel: '地理位置',
-	                id:'nposition',
-	                name: 'nposition',
-	                disabled:true
-	            },{
-	                fieldLabel: '模式',
-	                id:'nmode',
-	                name: 'nmode',
-	                xtype:'combo',
-	                transform:"nmodeList",
-					triggerAction:'all',
-					lazyRender:true
-	            },{
-	                fieldLabel: '混合比例',
-	                id:'mix_scale',
-	                name: 'mix_scale',
-	                allowBlank:true,
-	            },{
-	                fieldLabel: '混合量',
-	                id:'mix_level',
-	                name: 'mix_level',
-	                allowBlank:true,
-	            },{
-	                fieldLabel: '喷洒频率',
-	                id:'mix_freq',
-	                name: 'mix_freq',
-	                allowBlank:true,
-	            }]
-		    });
-	        win = new Ext.Window({
-	            //el:'node_edit_div',
-	            title:'节点编辑',
-	            layout:'form',
-	            width:360,
-	            height:100,
-	            closeAction:'hide',
-	            plain: true,
-	            modal:true,
-	            items: node_edit_form,
-	            buttons: [{
-	                text:'提交',
-	                handler:function(){
-	                	Ext.Ajax.request({
-							url:'__ROOT__/Home/Innerf/node_edit',
-							method:"GET",
-							params:{
-								nid:Ext.getCmp('nid').getValue(),
-								nname:Ext.getCmp('nname').getValue(),
-								//
-								mix_scale:Ext.getCmp('mix_scale').getValue(),
-								mix_level:Ext.getCmp('mix_level').getValue(),
-								mix_freq:Ext.getCmp('mix_freq').getValue()
-							},
-							success:function(response, options){
-								//Ext.MessageBox.alert('警告', response.responseText);
-								win.hide();
-								Ext.example.msg("提示", response.responseText);
-							}
-						});
-	                }
-	            },{
-	                text: '取消修改',
-	                handler: function(){
-	                    win.hide();
-	                }
-	            }]
-	        });
-		}
-		//
-		Ext.getCmp('nid').setValue(rec.data["id"]);
-		Ext.getCmp('nname').setValue(rec.data["name"]);
-		Ext.getCmp('nlocation').setValue(rec.data["lng"]+", "+rec.data["lat"]);
-		//alert(rec.data["nmode"]);
-		Ext.getCmp('nposition').setValue(rec.data["province"]+", "+rec.data["city"]+", "+rec.data["district"]);
-		Ext.getCmp('mix_scale').setValue(rec.data["auto_mix_scale"]);
-		Ext.getCmp('mix_level').setValue(rec.data["auto_mix_level"]);
-		Ext.getCmp('mix_freq').setValue(rec.data["auto_mix_freq"]);
-        win.show();
+		var w = getNodeEditWindow("节点编辑", "__ROOT__/Home/Innerf/node_edit", document.getElementById('nmodeList'), 
+			rec.data["id"], 
+			rec.data["name"], 
+			rec.data["lng"]+", "+rec.data["lat"],
+			rec.data["province"]+", "+rec.data["city"]+", "+rec.data["district"],
+			rec.data["nmode"],
+			rec.data["auto_mix_scale"],
+			rec.data["auto_mix_level"],
+			rec.data["auto_mix_freq"]
+		);
+        w.show();
 
 	});
+
+	
 });
 
  </script>
  <body>
+    <div id="node_query" style="margin:5px;height:100px;"></div>
     <div id="node_info" style="margin:5px"></div>
-    <div id="node_edit_div"></div>
-    <select id="nmodeList" style="display:none">
-    	<option value="0">自动</option>
-    	<option value="1">手动</option>
-    </select>
+    
  </body>
 </html>
