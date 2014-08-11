@@ -6,7 +6,7 @@
  * http://extjs.com/license
  */
 
-html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;font-size:18px;}
 img,body,html{border:0;}
 address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
 ol,ul{list-style:none;}
@@ -144,8 +144,8 @@ textarea{resize:none;}
 .x-form-select-one{height:20px;line-height:18px;vertical-align:middle;background-color:#fff;border:1px solid #B5B8C8;}
 .x-form-field-wrap{position:relative;zoom:1;white-space:nowrap;}
 .x-editor .x-form-check-wrap{background:#fff;}
-.x-form-field-wrap .x-form-trigger{width:17px;height:21px;border:0;background:transparent url(../images/default/form/trigger.gif) no-repeat 0 0;cursor:pointer;border-bottom:1px solid #B5B8C8;position:absolute;top:0;}
-.ext-safari .x-form-field-wrap .x-form-trigger{height:21px;}
+.x-form-field-wrap .x-form-trigger{width:17px;height:21px;border:0;background:transparent url(../images/default/form/trigger.gif) no-repeat 0 0;cursor:pointer;border-bottom:1px solid #B5B8C8;position:absolute;top:0;background-size:102px 30px;}
+.ext-safari .x-form-field-wrap .x-form-trigger{height:29px;}
 .x-form-field-wrap .x-form-date-trigger{background-image:url(../images/default/form/date-trigger.gif);cursor:pointer;}
 .x-form-field-wrap .x-form-clear-trigger{background-image:url(../images/default/form/clear-trigger.gif);cursor:pointer;}
 .x-form-field-wrap .x-form-search-trigger{background-image:url(../images/default/form/search-trigger.gif);cursor:pointer;}
@@ -833,7 +833,7 @@ body.x-body-masked .x-window-plain .x-window-mc{background:#C7D6E9;}
 .x-accordion-hd .x-tool-toggle-over{background-position:-15px -255px;}
 .x-panel-collapsed .x-accordion-hd .x-tool-toggle{background-position:0 -240px;}
 .x-panel-collapsed .x-accordion-hd .x-tool-toggle-over{background-position:-15px -240px;}
-.x-accordion-hd{color:#222;padding-top:4px;padding-bottom:3px;border-top:0 none;font-weight:normal;background:transparent url(../images/default/panel/light-hd.gif) repeat-x 0 -9px;}
+.x-accordion-hd{color:#222;padding-top:4px;padding-bottom:3px;border-top:0 none;background:transparent url(../images/default/panel/light-hd.gif) repeat-x 0 -9px;}
 .x-layout-collapsed{position:absolute;left:-10000px;top:-10000px;visibility:hidden;background-color:#d2e0f2;width:20px;height:20px;overflow:hidden;border:1px solid #98c0f4;z-index:20;}
 .ext-border-box .x-layout-collapsed{width:22px;height:22px;}
 .x-layout-collapsed-over{cursor:pointer;background-color:#d9e8fb;}

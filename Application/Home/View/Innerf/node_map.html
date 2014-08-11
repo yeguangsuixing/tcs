@@ -53,7 +53,10 @@ function callback(e){
 		params:{baidu_id:customPoi.poiId},
 		success:function(response,options){
 			var nodeinfo = response.responseText.evalJSON();
-			var w = getNodeEditWindow("节点编辑", "__ROOT__/Home/Innerf/node_edit", document.getElementById('nmodeList'),
+			var w = getNodeEditWindow(
+				"节点编辑", 
+				"__ROOT__/Home/Innerf/node_edit", 
+				document.getElementById('nmodeList'),
 				nodeinfo.id,
 				nodeinfo.name, 
 				nodeinfo.location,
@@ -61,7 +64,9 @@ function callback(e){
 				nodeinfo.mode,
 				nodeinfo.scale,
 				nodeinfo.level,
-				nodeinfo.freq
+				nodeinfo.freq,
+				nodeinfo.nh3,
+				nodeinfo.h2s
 			);
 		    w.show();
 		    syn_lock_modify = false;

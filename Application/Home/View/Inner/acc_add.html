@@ -21,7 +21,7 @@ Ext.onReady(function(){
     Ext.form.Field.prototype.msgTarget = 'side';//'qtip';//'under';
 
     var simple = new Ext.FormPanel({
-        labelWidth: 75, // label settings here cascade unless overridden
+        labelWidth: 135, // label settings here cascade unless overridden
         //url:'login_validate.php',
         id:'acc_add_formpanel',
         renderTo:"acc_add_div",
@@ -29,19 +29,23 @@ Ext.onReady(function(){
         title: '{$acc_add_title}',
         style:'margin:5px',
         width: 550,
-        defaults: {width: 230},
+        defaults: {width: 230, height:30},
         defaultType:'textfield',
         layout:"form",
         items: [{
                 fieldLabel: '账号',
                 id:'acc_add_uid',
                 name: 'acc_add_uid',
+                style:'font-size:18px;',
+                itemCls:'tcs_select_item',
                 allowBlank:false,
                 blankText:'请输入账号！'
             },{
                 fieldLabel: '密码',
                 id:'acc_add_password',
                 name: 'acc_add_password',
+                style:'font-size:18px;',
+                itemCls:'tcs_select_item',
                 allowBlank:false,
                 inputType:'password',
                 blankText:'请输入密码！'
@@ -52,11 +56,15 @@ Ext.onReady(function(){
                 allowBlank:false,
                 inputType:'password',
                 blankText:'请再次输入密码！',
+                style:'font-size:18px;',
+                itemCls:'tcs_select_item',
                 vtype:'passwordConfirm',
                 vtypeText:'两次密码不一致！',
                 confirmTo:'acc_add_password'
             },{
                 fieldLabel: '账户昵称',
+                style:'font-size:18px;',
+                itemCls:'tcs_select_item',
                 id:'acc_add_uname',
                 name: 'acc_add_uname',
                 allowBlank:true
@@ -64,6 +72,8 @@ Ext.onReady(function(){
                 fieldLabel: '邮箱',
                 id:'acc_add_email',
                 name: 'acc_add_email',
+                style:'font-size:18px;',
+                itemCls:'tcs_select_item',
                 vtype:'email',
                 allowBlank:true,
                 //blankText:'请输入邮箱！',
@@ -72,6 +82,8 @@ Ext.onReady(function(){
                 fieldLabel: '手机号',
                 id:'acc_add_mobilephone',
                 name: 'acc_add_mobilephone',
+                style:'font-size:18px;',
+                itemCls:'tcs_select_item',
                 allowBlank:false,
                 blankText:'请输入手机号！',
                 invalidText:'手机号格式不正确！',
@@ -85,12 +97,15 @@ Ext.onReady(function(){
                 xtype:'combo',
                 //store:['普管', '巡检'],
                 transform:'acc_add_utypeList',
+                cls:'tcs_select',
+                itemCls:'tcs_select_item',
                 triggerAction: 'all',
                 lazyRender:true,
                 fieldLabel:'角色',
                 mode:'local',
                 editable:false,
                 //emptyText:'请选择角色……',
+                tpl:'<tpl for="."><div class="x-combo-list-item tcs_select_item" >{text}</div></tpl>',
                 listeners:{
                     "select":function(t){
                         //alert(t.getValue());
@@ -100,17 +115,22 @@ Ext.onReady(function(){
                 fieldLabel:'权限',
                 xtype:'panel',
                 layout:'column',
+                style:'font-size:18px;',
+                itemCls:'tcs_select_item',
                 isFormField:true,
                 items:[{
                     xtype:'checkbox',
                     columnWidth:.5,
                     boxLabel:'可查看',
+                    autoHeight:true,
+                    style:'margin-top:8px',
                     id:'acc_add_pcheck',
                     name:'acc_add_pcheck'
                 },{
                     xtype:'checkbox',
                     columnWidth:.5,
                     boxLabel:'可控制',
+                    style:'margin-top:8px',
                     id:'acc_add_pcontrol',
                     name:'acc_add_pcontrol'
                 }]

@@ -45,14 +45,18 @@ Ext.onReady(function(){
             name: 'node_query_nposition'
         }],
         buttons:[{
+        	id:'node_query_btn_query',
             text: '查找',
-            handler:function(){
-            	//Ext.example.msg('查找',"查找");
+            handler:function(elem){
+            	elem.setDisabled(true);
             	node_store.reload({
             		start:0,
             		limit:10, 
             		name:Ext.getCmp('node_query_nname').getValue(), 
-            		position:Ext.getCmp('node_query_nposition').getValue() 
+            		position:Ext.getCmp('node_query_nposition').getValue() ,
+            		callback:function(){
+            			elem.setDisabled(false);
+            		}
             	});
             }
         }]
@@ -120,7 +124,8 @@ Ext.onReady(function(){
 			rec.data["nmode"],
 			rec.data["auto_mix_scale"],
 			rec.data["auto_mix_level"],
-			rec.data["auto_mix_freq"]
+			rec.data["auto_mix_freq"],
+			45,79
 		);
         w.show();
 

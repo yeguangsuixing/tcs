@@ -25,13 +25,13 @@ Ext.onReady(function(){
 		title:"账户信息",//height:150, width:500,
 		columns:[
 			{header:"ID",dataIndex:"uid", width:100, sortable:true},
-			{header:"昵称",dataIndex:"uname", sortable:true, 
+			{header:"昵称",dataIndex:"uname", width:150, sortable:true, 
 				editor: new Ext.form.TextField({
 					allowBlank: false
 				})
 			},
-			{header:"创建时间",dataIndex:"create_time", width:180, sortable:true},
-			{header:"上次登录时间",dataIndex:"last_login", width:180, sortable:true},
+			{header:"创建时间",dataIndex:"create_time", width:220, sortable:true},
+			{header:"上次登录时间",dataIndex:"last_login", width:220, sortable:true},
 			{header:"邮箱",dataIndex:"email", width:180, sortable:true, 
 				editor: new Ext.form.TextField({
 					allowBlank: false,

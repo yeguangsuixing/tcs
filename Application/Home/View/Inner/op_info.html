@@ -15,7 +15,7 @@ Ext.onReady(function(){
 		root:'root',
 		totalProperty:'totalCount'
 	});
-	op_store.load({ params:{ start:0,limit:10 } });
+	op_store.load({ params:{ start:0,limit:15 } });
 
 
 	var op_grid = new Ext.grid.GridPanel({
@@ -26,8 +26,8 @@ Ext.onReady(function(){
 		//viewConfig: { forceFit:true },
 		columns:[
 			//new Ext.grid.RowNumberer(),//增加自动编号，不需要可不必定义
-			{header:"操作ID",dataIndex:"oid", width:50, sortable:true },
-			{header:"节点ID",dataIndex:"nid", width:150, sortable:true},
+			{header:"操作ID",dataIndex:"oid", width:50, sortable:true, hidden:true },
+			{header:"节点ID",dataIndex:"nid", width:210, sortable:true},
 			{header:"节点名称",dataIndex:"nname", width:100,sortable:true},
 			{header:"类型",dataIndex:"otype", width:150,sortable:true,
 				renderer:function(val){
@@ -40,18 +40,18 @@ Ext.onReady(function(){
 					}
 				}
 			},
-			{header:"操作时间",dataIndex:"otime", width:150, sortable:true},
+			{header:"操作时间",dataIndex:"otime", width:220, sortable:true},
 			{header:"模式",dataIndex:"nmode", width:50, sortable:true, renderer:mix_attr_renderer },
 			{header:"混合比例",dataIndex:"mix_scale", sortable:true, renderer:mix_attr_renderer},
 			{header:"混合量",dataIndex:"mix_level", sortable:true, renderer:mix_attr_renderer},
 			{header:"喷洒频率",dataIndex:"mix_freq", sortable:true, renderer:mix_attr_renderer}
 		],
 		bbar: new Ext.PagingToolbar({
-			pageSize: 10,
+			pageSize: 15,
 			store: op_store,
 			displayInfo: true,
-			displayMsg: 'Display {0} - {1} of {2}',
-			emptyMsg: 'Nothing to Display'
+			displayMsg: '当前显示{0}-{1}条，共{2}条',
+			emptyMsg: '没有操作'
 		}),
 		store:op_store,
 		autoExpandColumn:8

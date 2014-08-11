@@ -27,17 +27,17 @@ Ext.onReady(function(){
 		//viewConfig: { forceFit:true },
 		columns:[
 			//new Ext.grid.RowNumberer(),//增加自动编号，不需要可不必定义
-			{header:"用户ID",dataIndex:"uid", width:50, sortable:true },
-			{header:"用户昵称",dataIndex:"uname", width:100, sortable:true},
-			{header:"发送时间",dataIndex:"mtime", width:200,sortable:true},
+			{header:"用户ID",dataIndex:"uid", width:100, sortable:true },
+			{header:"用户昵称",dataIndex:"uname", width:150, sortable:true},
+			{header:"发送时间",dataIndex:"mtime", width:220,sortable:true},
 			{header:"内容",dataIndex:"mcontent", sortable:true}
 		],
 		bbar: new Ext.PagingToolbar({
 			pageSize: 10,
 			store: msg_store,
 			displayInfo: true,
-			displayMsg: 'Display {0} - {1} of {2}',
-			emptyMsg: 'Nothing to Display'
+			displayMsg: '当前显示{0}-{1}条，共{2}条',
+			emptyMsg: '没有短信'
 		}),
 		store:msg_store,
 		autoExpandColumn:3
