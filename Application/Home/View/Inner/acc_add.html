@@ -149,13 +149,26 @@ Ext.onReady(function(){
             text: '添加',
             handler:function acc_add_submit(){
                 //var f = Ext.get('acc_add_formpanel');
+                alert(Ext.getCmp('acc_add_pcheck').getValue());
                 //f.form.submit({
                 Ext.Ajax.request({
                     url:'__ROOT__/Home/Inner/acc_add_validate',
                     method:"POST",
-                    //params:{},
+                    params:{
+                        uid:Ext.getCmp('acc_add_uid').getValue(),
+                        uname:Ext.getCmp('acc_add_uname').getValue(),
+                        password:Ext.getCmp('acc_add_password').getValue(),
+                        email:Ext.getCmp('acc_add_email').getValue(),
+                        mobilephone:Ext.getCmp('acc_add_mobilephone').getValue(),
+                        utype:Ext.getCmp('acc_add_utype').getValue(),
+                        pcheck:Ext.getCmp('acc_add_pcheck').getValue(),
+                        pcontrol:Ext.getCmp('acc_add_pcontrol').getValue()
+                    },
                     success:function(response, options){
                         //Ext.MessageBox.alert('警告', response.responseText);
+                        Ext.example.msg("提示", response.responseText);
+                    },
+                    failure:function(response, options){
                         Ext.example.msg("提示", response.responseText);
                     }
                 });

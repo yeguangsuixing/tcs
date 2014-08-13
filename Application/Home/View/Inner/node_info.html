@@ -8,9 +8,12 @@ Ext.onReady(function(){
 		//data:node_data,
 		idPropery:"id",
 		//remoteSort:true,
+
 		fields:["id","name", "lng", "lat", "first_access", "last_access", 
 			"nmode", "auto_mix_scale", "auto_mix_level", "auto_mix_freq", 
 			"district", "city", "province"],
+		root: 'root',
+        totalProperty: 'totalCount',
 		url:'__ROOT__/Home/Inner/node_info_list'
 	});
 	node_store.load({ params:{ start:0,limit:15 } });

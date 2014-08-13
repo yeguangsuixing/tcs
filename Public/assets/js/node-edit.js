@@ -12,7 +12,7 @@ function getNodeEditWindow_change_mode_select(value){
         Ext.getCmp('node_edit_h2s').setDisabled(false);
         Ext.getCmp('node_edit_btn_mix').setDisabled(true);
         Ext.getCmp('node_edit_btn_cleanup').setDisabled(true);
-        Ext.getCmp('node_edit_btn_submit').setText('提交自动模式数据');
+        //Ext.getCmp('node_edit_btn_submit').setText('提交自动模式数据');
     } else {
         Ext.getCmp('node_edit_mix_scale').el.parent().prev().dom.innerText = '手动混合比例:';
         Ext.getCmp('node_edit_mix_level').el.parent().prev().dom.innerText = '手动混合量:';
@@ -21,10 +21,11 @@ function getNodeEditWindow_change_mode_select(value){
         Ext.getCmp('node_edit_h2s').setDisabled(true);
         Ext.getCmp('node_edit_btn_mix').setDisabled(false);
         Ext.getCmp('node_edit_btn_cleanup').setDisabled(false);
-        Ext.getCmp('node_edit_btn_submit').setText('设置节点为手动');
+        //Ext.getCmp('node_edit_btn_submit').setText('保存');
     }
 }
-function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpos, pvmode, pvscale, pvlevel, pvfreq, pvnh3, pvh2s){
+function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpos, 
+    pvmode, pvscale, pvlevel, pvfreq, pvnh3, pvh2s){
 	if(!node_edit_window){
 		pemodeselect.style.display="";
         var modeselect = new Ext.form.ComboBox({
@@ -154,30 +155,71 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpo
                 disabled:pvmode==0,
                 id:'node_edit_btn_mix',
                 handler:function(elem){
-
+                    elem.setDisabled(true);
+                    Ext.Ajax.request({
+                        url: purl,
+                        method:"GET",
+                        params:{
+                            pnid:Ext.getCmp('node_edit_nid').getValue(),
+                            pnmode:2,
+                            pmix_scale:Ext.getCmp('node_edit_mix_scale').getValue(),
+                            pmix_level:Ext.getCmp('node_edit_mix_level').getValue()
+                        },
+                        success:function(response, options){
+                            //Ext.MessageBox.alert('警告', response.responseText);
+                            node_edit_window.hide();
+                            elem.setDisabled(false);
+                            Ext.example.msg("提示", response.responseText);
+                        },
+                        failure:function(response, options){
+                            elem.setDisabled(false);
+                            Ext.example.msg("提示", response.responseText);
+                        }
+                    });
                 }
             },{
                 text:'启动喷洒',
                 disabled:pvmode==0,
                 id:'node_edit_btn_cleanup',
                 handler:function(elem){
-
+                    elem.setDisabled(true);
+                    Ext.Ajax.request({
+                        url: purl,
+                        method:"GET",
+                        params:{
+                            pnid:Ext.getCmp('node_edit_nid').getValue(),
+                            pnmode:3,
+                            pmix_freq:Ext.getCmp('node_edit_mix_freq').getValue()
+                        },
+                        success:function(response, options){
+                            //Ext.MessageBox.alert('警告', response.responseText);
+                            node_edit_window.hide();
+                            elem.setDisabled(false);
+                            Ext.example.msg("提示", response.responseText);
+                        },
+                        failure:function(response, options){
+                            elem.setDisabled(false);
+                            Ext.example.msg("提示", response.responseText);
+                        }
+                    });
                 }
             },{
             	id:'node_edit_btn_submit',
-                text: pvmode==0?'提交自动模式数据':'设置节点为手动',
+                text: '保存',//pvmode==0?'提交自动模式数据':'保存',
                 handler:function(elem){
                 	elem.setDisabled(true);
                 	Ext.Ajax.request({
 						url: purl,
 						method:"GET",
 						params:{
-							nid:Ext.getCmp('node_edit_nid').getValue(),
-							nname:Ext.getCmp('node_edit_nname').getValue(),
-							nmode:Ext.getCmp('node_edit_nmode').getValue(),
-							mix_scale:Ext.getCmp('node_edit_mix_scale').getValue(),
-							mix_level:Ext.getCmp('node_edit_mix_level').getValue(),
-							mix_freq:Ext.getCmp('node_edit_mix_freq').getValue()
+							pnid:Ext.getCmp('node_edit_nid').getValue(),
+							pnname:Ext.getCmp('node_edit_nname').getValue(),
+							pnmode:Ext.getCmp('node_edit_nmode').getValue(),
+							pmix_scale:Ext.getCmp('node_edit_mix_scale').getValue(),
+							pmix_level:Ext.getCmp('node_edit_mix_level').getValue(),
+							pmix_freq:Ext.getCmp('node_edit_mix_freq').getValue(),
+                            pnh3:Ext.getCmp('node_edit_nh3').getValue(),
+                            ph2s:Ext.getCmp('node_edit_h2s').getValue()
 						},
 						success:function(response, options){
 							//Ext.MessageBox.alert('警告', response.responseText);

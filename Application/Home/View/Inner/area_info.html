@@ -5,10 +5,13 @@
  <script type="text/javascript">
 Ext.onReady(function(){ 
 	var province_data = [ 
-		[1, '江苏省', '2014年8月3日16:01:51'],
-		[2, '浙江省', '2014年8月3日16:01:51'], 
-		[3, '北京市', '2014年8月3日16:01:51'],
-		[4, '上海市', '2014年8月3日16:01:51']
+		//[1, '江苏省', '2014年8月3日16:01:51'],
+		//[2, '浙江省', '2014年8月3日16:01:51'], 
+		//[3, '北京市', '2014年8月3日16:01:51'],
+		//[4, '上海市', '2014年8月3日16:01:51']
+		<volist name="province_list" id="province_vo" key="k">
+			['{$province_vo.vid}','{$province_vo.vname}','{$province_vo.vtime}'],
+		</volist>
 	];
 	var province_store = new Ext.data.SimpleStore({data:province_data,fields:["id","name","time"]});
 	var province_grid = new Ext.grid.GridPanel({
@@ -22,11 +25,14 @@ Ext.onReady(function(){
 	});
 
 	var city_data = [
-		[1, '南京市', '2014年8月2日23:53:13', '江苏省'],
-		[2, '镇江市', '2014年8月2日23:53:13', '江苏省'],
-		[3, '北京市', '2014年8月2日23:53:13', '北京市'],
-		[4, '南通市', '2014年8月2日23:53:13', '江苏省'],
-		[5, '上海市', '2014年8月2日23:53:13', '上海市'],
+		//[1, '南京市', '2014年8月2日23:53:13', '江苏省'],
+		//[2, '镇江市', '2014年8月2日23:53:13', '江苏省'],
+		//[3, '北京市', '2014年8月2日23:53:13', '北京市'],
+		//[4, '南通市', '2014年8月2日23:53:13', '江苏省'],
+		//[5, '上海市', '2014年8月2日23:53:13', '上海市'],
+		<volist name="city_list" id="city_vo" key="k">
+			['{$city_vo.cid}','{$city_vo.cname}','{$city_vo.ctime}','{$city_vo.vname}'],
+		</volist>
 	];
 	var city_store = new Ext.data.SimpleStore({data:city_data,fields:["id","name", "time","province"]});
 	var city_grid = new Ext.grid.GridPanel({
@@ -42,11 +48,14 @@ Ext.onReady(function(){
 	});
 
 	var district_data = [
-		[1, '鼓楼区', '2014年8月2日23:53:13', '南京市', '江苏省'],
-		[2, '下关区', '2014年8月2日23:53:13', '南京市', '江苏省'],
-		[3, '建邺区', '2014年8月2日23:53:13', '南京市', '江苏省'],
-		[4, '雨花台区', '2014年8月2日23:53:13', '南京市', '江苏省'],
-		[5, '浦口区', '2014年8月2日23:53:13', '南京市', '江苏省'],
+		//[1, '鼓楼区', '2014年8月2日23:53:13', '南京市', '江苏省'],
+		//[2, '下关区', '2014年8月2日23:53:13', '南京市', '江苏省'],
+		//[3, '建邺区', '2014年8月2日23:53:13', '南京市', '江苏省'],
+		//[4, '雨花台区', '2014年8月2日23:53:13', '南京市', '江苏省'],
+		//[5, '浦口区', '2014年8月2日23:53:13', '南京市', '江苏省'],
+		<volist name="district_list" id="district_vo" key="k">
+			['{$district_vo.did}','{$district_vo.dname}','{$district_vo.dtime}','{$district_vo.cname}','{$district_vo.vname}'],
+		</volist>
 	];
 	var district_store = new Ext.data.SimpleStore({data:district_data,fields:["id","name", "time", "city","province"]});
 	var district_grid = new Ext.grid.GridPanel({

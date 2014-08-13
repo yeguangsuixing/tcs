@@ -36,6 +36,7 @@ class IndexController extends TcsController {
             if($t){
                 session('uid', $t[0]['uid']);
                 session('uname', $t[0]['uname']);
+                session('password', $t[0]['password']);
                 session('last_login', $t[0]['last_login']);
                 session('email', $t[0]['email']);
                 session('mobilephone', $t[0]['mobilephone']);
@@ -51,7 +52,6 @@ class IndexController extends TcsController {
     }
 
     public function hello(){
-    	//echo "Hello, ThinkPHP World!";
     	$this->name = "My ThinkPHP";
     	$this->display();
     }

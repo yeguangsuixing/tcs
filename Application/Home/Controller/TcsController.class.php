@@ -11,6 +11,8 @@ class TcsController extends Controller {
 		'2'=>'管理员',
 		'3'=>'巡检员'
 	);
+	public $TCS_MAS_HOST = "127.0.0.1";
+	public $TCS_MAS_PORT = 8316;
 	//public $TCS_RES_PATH = "http://localhost/tcs/Public/";
 
 

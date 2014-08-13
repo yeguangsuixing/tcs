@@ -1,51 +1,11 @@
-{totalCount:100, root:[{	
-	'uid':'user1',
-	'uname':'用户名1',
-	'mtime':'2014年8月3日17:09:16',
-	'mcontent':'警告：节点DRFREFWERFERFWE(nname:小粉桥旁, loc:江苏省南京市鼓楼区)药量不足！'
-},{
-	'uid':'user1',
-	'uname':'用户名1',
-	'mtime':'2014年8月3日17:09:16',
-	'mcontent':'警告：节点DRFREFWERFERFWE(nname:小粉桥旁, loc:江苏省南京市鼓楼区)药量不足！'
-},{
-	'uid':'user1',
-	'uname':'用户名1',
-	'mtime':'2014年8月3日17:09:16',
-	'mcontent':'警告：节点DRFREFWERFERFWE(nname:小粉桥旁, loc:江苏省南京市鼓楼区)药量不足！'
-},{
-	'uid':'user1',
-	'uname':'用户名1',
-	'mtime':'2014年8月3日17:09:16',
-	'mcontent':'警告：节点DRFREFWERFERFWE(nname:小粉桥旁, loc:江苏省南京市鼓楼区)药量不足！'
-},{
-	'uid':'user1',
-	'uname':'用户名1',
-	'mtime':'2014年8月3日17:09:16',
-	'mcontent':'警告：节点DRFREFWERFERFWE(nname:小粉桥旁, loc:江苏省南京市鼓楼区)药量不足！'
-},{
-	'uid':'user1',
-	'uname':'用户名1',
-	'mtime':'2014年8月3日17:09:16',
-	'mcontent':'警告：节点DRFREFWERFERFWE(nname:小粉桥旁, loc:江苏省南京市鼓楼区)药量不足！'
-},{
-	'uid':'user1',
-	'uname':'用户名1',
-	'mtime':'2014年8月3日17:09:16',
-	'mcontent':'警告：节点DRFREFWERFERFWE(nname:小粉桥旁, loc:江苏省南京市鼓楼区)药量不足！'
-},{
-	'uid':'user1',
-	'uname':'用户名1',
-	'mtime':'2014年8月3日17:09:16',
-	'mcontent':'警告：节点DRFREFWERFERFWE(nname:小粉桥旁, loc:江苏省南京市鼓楼区)药量不足！'
-},{
-	'uid':'user1',
-	'uname':'用户名1',
-	'mtime':'2014年8月3日17:09:16',
-	'mcontent':'警告：节点DRFREFWERFERFWE(nname:小粉桥旁, loc:江苏省南京市鼓楼区)药量不足！'
-},{
-	'uid':'user1',
-	'uname':'用户名1',
-	'mtime':'2014年8月3日17:09:16',
-	'mcontent':'警告：节点DRFREFWERFERFWE(nname:小粉桥旁, loc:江苏省南京市鼓楼区)药量不足！'
-}]}
+{totalCount:<?php echo($sys_msg_list);?>, 
+root:[
+<volist name="sys_msg_list" id="sys_msg_vo">
+{	
+	'uid':'{$sys_msg_vo.uid}',
+	'uname':'{$sys_msg_vo.uname}',
+	'mtime':'{$sys_msg_vo.mtime}',
+	'mcontent':'{$sys_msg_vo.mcontent}'
+},
+</volist>
+]}

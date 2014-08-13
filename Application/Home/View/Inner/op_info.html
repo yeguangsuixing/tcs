@@ -10,7 +10,7 @@ function mix_attr_renderer(val){
 }
 Ext.onReady(function(){ 
 	var op_store = new Ext.data.JsonStore({
-		fields:["oid","nid", "nname", "otype", "otime", "nmode","mix_scale", "mix_level", "mix_freq"],
+		fields:["oid","nid", "nname", "otype", "otime", "nmode","mix_scale", "mix_level", "mix_freq", "loc"],
 		url:'__ROOT__/Home/Inner/op_info_list',
 		root:'root',
 		totalProperty:'totalCount'
@@ -29,22 +29,24 @@ Ext.onReady(function(){
 			{header:"操作ID",dataIndex:"oid", width:50, sortable:true, hidden:true },
 			{header:"节点ID",dataIndex:"nid", width:210, sortable:true},
 			{header:"节点名称",dataIndex:"nname", width:100,sortable:true},
-			{header:"类型",dataIndex:"otype", width:150,sortable:true,
+			{header:"类型",dataIndex:"otype", width:180,sortable:true,
 				renderer:function(val){
 					var val = ""+val;
 					switch(val){
 						case '1':return "设置自动模式数据";
 						case '2':return "设置单次喷洒数据";
-						case '3':return "设置阀门状态";
+						case '3':return "启动混合";
+						case '4':return "启动喷洒";
 						default:return '<span style="font-color:red;">未知操作类型</span>';
 					}
 				}
 			},
 			{header:"操作时间",dataIndex:"otime", width:220, sortable:true},
-			{header:"模式",dataIndex:"nmode", width:50, sortable:true, renderer:mix_attr_renderer },
+			{header:"模式",dataIndex:"nmode", width:50, sortable:true, renderer:mix_attr_renderer,hidden:true },
 			{header:"混合比例",dataIndex:"mix_scale", sortable:true, renderer:mix_attr_renderer},
 			{header:"混合量",dataIndex:"mix_level", sortable:true, renderer:mix_attr_renderer},
-			{header:"喷洒频率",dataIndex:"mix_freq", sortable:true, renderer:mix_attr_renderer}
+			{header:"喷洒频率",dataIndex:"mix_freq", sortable:true, renderer:mix_attr_renderer},
+			{header:"位置",dataIndex:"loc", sortable:true }
 		],
 		bbar: new Ext.PagingToolbar({
 			pageSize: 15,
@@ -54,7 +56,7 @@ Ext.onReady(function(){
 			emptyMsg: '没有操作'
 		}),
 		store:op_store,
-		autoExpandColumn:8
+		autoExpandColumn:9
 	});
 
 });
