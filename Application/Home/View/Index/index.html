@@ -86,7 +86,16 @@ function addTcsTab(elem, turl, isclosable) {
         autoLoad:{
             url:turl,
             scripts:true,
-            script:true
+            script:true,
+            callback:function(el, is_succeed, response){
+                if(!is_succeed){
+                    //alert(response.responseText);
+                    //console.log(el);
+                    el.dom.innerHTML = response.responseText;
+                    //Ext.MessageBox.alert("错误",response.responseText.substring(0,100));
+                }
+            },
+            timeout:15
         }
     });
     mainTabPanel.add(tp).show();

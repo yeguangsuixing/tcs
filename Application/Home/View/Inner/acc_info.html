@@ -15,8 +15,9 @@ Ext.onReady(function(){
 		//['NJ0005', '管理员5', '2014年8月3日16:01:51', '2014年8月3日17:36:31', 'nj0005@tcs.com', '15900000005', 3],
 		//['NJ0006', '管理员6', '2014年8月3日16:01:51', '2014年8月3日17:36:31', 'nj0006@tcs.com', '15900000006', 2],
 		//['NJ0007', '管理员7', '2014年8月3日16:01:51', '2014年8月3日17:36:31', 'nj0007@tcs.com', '15900000007', 2]
-		<volist name="user_list" id="user_vo">
-			['{$user_vo.uid}','{$user_vo.uname}','{$user_vo.create_time}','{$user_vo.last_login}','{$user_vo.email}','{$user_vo.mobilephone}',{$user_vo.utype}],
+		<volist name="user_list" id="user_vo" key="k">
+			['{$user_vo.uid}','{$user_vo.uname}','{$user_vo.create_time}','{$user_vo.last_login}','{$user_vo.email}','{$user_vo.mobilephone}',{$user_vo.utype}]
+			<neq name="k" value="$user_list_count">,</neq>
 		</volist>
 	];
 	var acc_store = new Ext.data.SimpleStore({

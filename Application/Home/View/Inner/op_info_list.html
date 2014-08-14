@@ -1,6 +1,6 @@
 {totalCount:<?php echo($node_op_count);?>, 
 root:[
-<volist name="op_list" id="op_vo">
+<volist name="op_list" id="op_vo" key="k">
 {	
 	'oid':{$op_vo.oid}, 
 	'nid':'{$op_vo.nid}',
@@ -14,6 +14,6 @@ root:[
 	'nh3':{$op_vo.onh3},
 	'h2s':{$op_vo.oh2s},
 	'loc':'{$op_vo.oloc}'
-},
+}<neq name="k" value="$node_op_count">,</neq>
 </volist>
 ]}

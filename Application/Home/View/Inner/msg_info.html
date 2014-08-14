@@ -16,7 +16,19 @@ Ext.onReady(function(){
         totalProperty: 'totalCount'
         //id: 'uid',
 	});
-	msg_store.load({ params:{ start:0,limit:10 } });
+	msg_store.load({ 
+		params:{ start:0,limit:10 },
+		callback:function(rec,scope,success){
+			if(!success){
+				Ext.MessageBox.show({
+		           title: '错误',
+		           msg: '加载短信列表失败！',
+		           buttons: Ext.MessageBox.OK,
+		           icon: Ext.MessageBox.ERROR
+		       });
+			}
+		}
+	});
 
 
 	var msg_grid = new Ext.grid.GridPanel({

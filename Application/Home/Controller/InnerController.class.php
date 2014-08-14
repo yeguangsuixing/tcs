@@ -21,12 +21,16 @@ class InnerController extends TcsController {
 		$this->assign("province_list", $province_list);
 		$this->assign("city_list", $city_list);
 		$this->assign("district_list", $district_list);
+		$this->assign("province_list_count", count($province_list));
+		$this->assign("city_list_count", count($city_list));
+		$this->assign("district_list_count", count($district_list));
 		$this->display();
 	}
 	public function acc_info(){
 		$m = M('User');
 		$m_list = $m->where("utype <> '1'")->select();//除去超管
 		$this->assign("user_list", $m_list);
+		$this->assign("user_list_count", count($m_list));
 		$this->display();
 	}  
 	//uid:uid,uname:uname,email:email,mobilephone:mobilephone,utype:utype

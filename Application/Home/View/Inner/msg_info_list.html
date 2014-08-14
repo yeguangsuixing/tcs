@@ -1,11 +1,11 @@
-{totalCount:<?php echo($sys_msg_list);?>, 
+{totalCount:<?php echo($sys_msg_count);?>, 
 root:[
-<volist name="sys_msg_list" id="sys_msg_vo">
+<volist name="sys_msg_list" id="sys_msg_vo" key="k">
 {	
 	'uid':'{$sys_msg_vo.uid}',
 	'uname':'{$sys_msg_vo.uname}',
 	'mtime':'{$sys_msg_vo.mtime}',
 	'mcontent':'{$sys_msg_vo.mcontent}'
-},
+}<neq name="k" value="$sys_msg_count">,</neq>
 </volist>
 ]}

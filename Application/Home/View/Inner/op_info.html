@@ -15,7 +15,19 @@ Ext.onReady(function(){
 		root:'root',
 		totalProperty:'totalCount'
 	});
-	op_store.load({ params:{ start:0,limit:15 } });
+	op_store.load({ 
+		params:{ start:0,limit:15 },
+		callback:function(rec,scope,success){
+			if(!success){
+				Ext.MessageBox.show({
+		           title: '错误',
+		           msg: '加载节点操作信息失败！',
+		           buttons: Ext.MessageBox.OK,
+		           icon: Ext.MessageBox.ERROR
+		       });
+			}
+		}
+	});
 
 
 	var op_grid = new Ext.grid.GridPanel({
