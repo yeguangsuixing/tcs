@@ -34,9 +34,9 @@ class InnerController extends TcsController {
 		$this->display();
 	}  
 	//uid:uid,uname:uname,email:email,mobilephone:mobilephone,utype:utype
-	public function acc_info_modify($uid=-1,$uname='',$email='',$mobilephone='',$utype=1){
+	public function acc_info_modify($uid=-1,$uname='',$email='',$mobilephone='',$utype=2){
 		//$t = I("uname");
-		if($uid == -1 || $mobilephone == ''){
+		if($uid == -1 || $uid == '' || $mobilephone == ''){
 			$this->show("参数错误！");
 			return;
 		}
@@ -59,8 +59,8 @@ class InnerController extends TcsController {
 	public function acc_add_validate(){
 		$m = M('User');
 		if($m->create()){
-			$m->create_time = time();
-			$result = $m->add();
+			$m->create_time = date('Y-m-d H:i:s', time());
+			$result = $m->add();//$this->show($m->_sql());
 			if($result){
 				$this->show("添加用户".I('uid')."成功！");
 			} else {
@@ -70,7 +70,7 @@ class InnerController extends TcsController {
 			$this->show("添加失败！创建对象错误！");
 		}
 	}
-	public function perm_modify(){
+	public function perm_info_list(){
 		$this->display();
 	}
 	public function perm_modify_validate(){
@@ -95,7 +95,7 @@ class InnerController extends TcsController {
 	}
 	public function op_info_list(){
 		$m = M();
-		$count = $m->query('SELECT count(oid) AS c FROM t_node_op');
+		$count = $m->query('SELECT count(oid) AS c FROM t_node_op_view');
 		$this->assign('node_op_count', $count[0]['c']);
 		$op_model = M('NodeOpView');
 		$op_list = $op_model->select();
@@ -108,7 +108,7 @@ class InnerController extends TcsController {
 	}
 	public function msg_info_list(){
 		$m = M();
-		$count = $m->query('SELECT count(oid) AS c FROM t_sys_msg');
+		$count = $m->query('SELECT count(m.mid) AS c FROM t_sys_msg_view m');
 		$this->assign('sys_msg_count', $count[0]['c']);
 		$sys_msg_model = M('SysMsgView');
 		$sys_msg_list = $sys_msg_model->select();

@@ -28,7 +28,12 @@ Ext.onReady(function(){
 		renderTo:"acc_info",
 		title:"账户信息",//height:150, width:500,
 		columns:[
-			{header:"ID",dataIndex:"uid", width:100, sortable:true},
+			{header:"ID",dataIndex:"uid", width:100, sortable:true,
+			renderer:function(val){
+				var t = '<span onclick="column_click_handler(this.innerText)" style="cursor:pointer">id</span>';
+				return t.replace(/id/g, val);
+			}
+		},
 			{header:"昵称",dataIndex:"uname", width:150, sortable:true, 
 				editor: new Ext.form.TextField({
 					allowBlank: false
@@ -62,7 +67,7 @@ Ext.onReady(function(){
 					}
 				},
 				editor:new Ext.form.ComboBox({
-					transform:"utypeList",  //可编辑下拉菜单
+					transform:"utypeList",
 					triggerAction: 'all',
 					lazyRender:true
 				})
@@ -92,12 +97,100 @@ Ext.onReady(function(){
 
 	}
 	acc_grid.on("afteredit", SubmitAcc, this);
+//以下是权限表
+	var perm_store = new Ext.data.JsonStore({
+		fields:["did","dfullname","uid","uname","pcheck","pcontrol"],
+		url:'__ROOT__/Home/Inner/perm_info_list',
+		root:'root',
+		totalProperty:'totalCount'
+	});
+	perm_store.load({ params:{ uid:0 } });
+	//column_click_handler(0);
+	var checkColumn = new Ext.grid.CheckColumn({
+       header: "是否可查看",
+       dataIndex: 'pcheck',
+       width: 180
+    });
+	var ctrlColumn = new Ext.grid.CheckColumn({
+       header: "是否可控制",
+       dataIndex: 'pcontrol',
+       width: 180
+    });
+	var perm_grid = new Ext.grid.GridPanel({
+		renderTo:"perm_info",
+		title:"权限信息", 
+		autoHeight: true,//height:400, //width:500,
+		loadMask:true,
+		//viewConfig: { forceFit:true },
+        plugins:[checkColumn,ctrlColumn],
+		columns:[
+			new Ext.grid.RowNumberer(),//增加自动编号，不需要可不必定义
+			{header:"区县ID",dataIndex:"did", width:50, sortable:true, hidden:true },
+			{header:"区县名称",dataIndex:"dfullname", width:210, sortable:true},
+			{header:"用户ID",dataIndex:"uid", width:100,sortable:true},
+			{header:"用户昵称",dataIndex:"uname", width:180,sortable:true},
+			checkColumn, ctrlColumn
+		],
+		bbar: new Ext.PagingToolbar({
+			pageSize: 15,
+			store: perm_store,
+			displayInfo: true,
+			displayMsg: '当前显示{0}-{1}条，共{2}条',
+			emptyMsg: '没有权限'
+		}),
+		store:perm_store,
+		autoExpandColumn:3
+	});
+	function SubmitPerm(obj){
+		var rec = obj.record;
+		var uid = rec.get("uid");
+		var pcheck = rec.get("pcheck");
+		var pcontrol = rec.get("pcontrol");
+		//Ext.MessageBox.alert('警告', pcheck+","+pcontrol);
+		Ext.Ajax.request({
+			url:'__ROOT__/Home/Inner/perm_modify_validate',
+			method:"POST",
+			params:{uid:uid, pcheck:pcheck, pcontrol:pcontrol},
+			success:function(response, options){
+				Ext.example.msg("提示", response.responseText);
+			},
+			failure:function(response, options){
+				Ext.example.msg("提示", "修改权限失败！");
+			}
+		});
 
+	}
+	perm_grid.on("afteredit", SubmitPerm, this);
+
+
+	function column_click_handler(puid){
+		//*
+		perm_store.reload({ 
+			params:{ uid:puid },
+			callback:function(rec,scope,success){
+				if(!success){
+					Ext.MessageBox.show({
+			           title: '错误',
+			           msg: '加载权限信息失败！',
+			           buttons: Ext.MessageBox.OK,
+			           icon: Ext.MessageBox.ERROR
+			       });
+				}
+			}
+		});//*/
+	}
 });
 
  </script>
  <body>
     <div id="acc_info" style="margin:5px"></div>
+
+    <div id="op_tip" style="margin:5px">
+    	<p>点击ID列单元格可以以查看或修改用户权限</p>
+    	<p>点击昵称、邮箱、手机号列单元格可以修改用户信息</p>
+    </div>
+
+    <div id="perm_info" style="margin:5px"></div>
 
     <select id="utypeList" name="utypeList">
     	<option value="2">普通管理员</option>

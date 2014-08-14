@@ -3,8 +3,8 @@
 
 
 var node_edit_window;
-function getNodeEditWindow_change_mode_select(value){
-    if(value == 0){
+function getNodeEditWindow_change_mode_select(nmode){
+    if(nmode == 0){
         Ext.getCmp('node_edit_mix_scale').el.parent().prev().dom.innerText = '自动混合比例:';
         Ext.getCmp('node_edit_mix_level').el.parent().prev().dom.innerText = '自动混合量:';
         Ext.getCmp('node_edit_mix_freq').el.parent().prev().dom.innerText = '自动喷洒量:';
@@ -145,7 +145,7 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpo
             title:'节点编辑与控制',
             layout:'form',
             width:500,
-            height:273,
+            height:426,
             closeAction:'hide',
             plain: true,
             modal:true,
@@ -162,6 +162,7 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpo
                         params:{
                             pnid:Ext.getCmp('node_edit_nid').getValue(),
                             pnmode:2,
+                            pnname:Ext.getCmp('node_edit_nname').getValue(),
                             pmix_scale:Ext.getCmp('node_edit_mix_scale').getValue(),
                             pmix_level:Ext.getCmp('node_edit_mix_level').getValue()
                         },
@@ -173,7 +174,7 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpo
                         },
                         failure:function(response, options){
                             elem.setDisabled(false);
-                            Ext.example.msg("提示", response.responseText);
+                            Ext.example.msg("提示", ""+response.responseText);
                         }
                     });
                 }
@@ -189,6 +190,7 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpo
                         params:{
                             pnid:Ext.getCmp('node_edit_nid').getValue(),
                             pnmode:3,
+                            pnname:Ext.getCmp('node_edit_nname').getValue(),
                             pmix_freq:Ext.getCmp('node_edit_mix_freq').getValue()
                         },
                         success:function(response, options){

@@ -53,6 +53,11 @@ function callback(e){
 		params:{baidu_id:customPoi.poiId},
 		success:function(response,options){
 			var nodeinfo = response.responseText.evalJSON();
+			if(nodeinfo.result == '0'){
+				Ext.MessageBox.alert('错误', '无法找到ID为'+customPoi.poiId+'的节点！');
+		    	syn_lock_modify = false;
+				return;
+			}
 			var w = getNodeEditWindow(
 				"节点编辑", 
 				"__ROOT__/Home/Innerf/node_edit", 
