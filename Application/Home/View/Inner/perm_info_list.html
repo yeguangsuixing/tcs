@@ -1,6 +1,13 @@
 {totalCount:10, 
 root:[
-{'did':3,'dfullname':'安徽省合肥市瑶海区','uid':'test','uname':'ewrg用户1','pcheck':false,'pcontrol':false},
-{'did':3,'dfullname':'安徽省合肥市瑶海区','uid':'test','uname':'ewrg用户1','pcheck':true,'pcontrol':false},
-{'did':3,'dfullname':'安徽省合肥市瑶海区','uid':'test','uname':'ewrg用户1','pcheck':false,'pcontrol':false}
+<volist name="perm_list" id="perm_vo" key="k">
+{
+	'did': {$perm_vo.did},
+	'dfullname':'{$perm_vo.dfullname}',
+	'uid':'{$perm_vo.uid}',
+	'uname':'{$perm_vo.uname}',
+	'pcheck':<php>if($perm_vo['pcheck'] == null) echo '0'; else echo $perm_vo['pcheck'];</php>,
+	'pcontrol':<php>if($perm_vo['pcontrol'] == null) echo '0'; else echo $perm_vo['pcontrol'];</php>
+}<neq name="k" value="$perm_list_count">,</neq>
+</volist>
 ]}

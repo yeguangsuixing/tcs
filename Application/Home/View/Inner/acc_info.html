@@ -5,6 +5,23 @@
  <script type="text/javascript">
 
 
+var perm_store = '';
+function column_click_handler(puid){
+	//*
+	perm_store.reload({ 
+		params:{ uid:puid },
+		callback:function(rec,scope,success){
+			if(!success){
+				Ext.MessageBox.show({
+		           title: '错误',
+		           msg: '加载权限信息失败！',
+		           buttons: Ext.MessageBox.OK,
+		           icon: Ext.MessageBox.ERROR
+		       });
+			}
+		}
+	});//*/
+}
 
 Ext.onReady(function(){ 
 	var acc_data = [ 
@@ -98,7 +115,7 @@ Ext.onReady(function(){
 	}
 	acc_grid.on("afteredit", SubmitAcc, this);
 //以下是权限表
-	var perm_store = new Ext.data.JsonStore({
+	perm_store = new Ext.data.JsonStore({
 		fields:["did","dfullname","uid","uname","pcheck","pcontrol"],
 		url:'__ROOT__/Home/Inner/perm_info_list',
 		root:'root',
@@ -130,27 +147,28 @@ Ext.onReady(function(){
 			{header:"用户ID",dataIndex:"uid", width:100,sortable:true},
 			{header:"用户昵称",dataIndex:"uname", width:180,sortable:true},
 			checkColumn, ctrlColumn
-		],
+		],/*
 		bbar: new Ext.PagingToolbar({
 			pageSize: 15,
 			store: perm_store,
 			displayInfo: true,
 			displayMsg: '当前显示{0}-{1}条，共{2}条',
 			emptyMsg: '没有权限'
-		}),
+		}),//*/
 		store:perm_store,
 		autoExpandColumn:3
 	});
 	function SubmitPerm(obj){
 		var rec = obj.record;
 		var uid = rec.get("uid");
+		var did = rec.get("did");
 		var pcheck = rec.get("pcheck");
 		var pcontrol = rec.get("pcontrol");
 		//Ext.MessageBox.alert('警告', pcheck+","+pcontrol);
 		Ext.Ajax.request({
 			url:'__ROOT__/Home/Inner/perm_modify_validate',
 			method:"POST",
-			params:{uid:uid, pcheck:pcheck, pcontrol:pcontrol},
+			params:{uid:uid, did:did, pcheck:pcheck, pcontrol:pcontrol},
 			success:function(response, options){
 				Ext.example.msg("提示", response.responseText);
 			},
@@ -162,23 +180,6 @@ Ext.onReady(function(){
 	}
 	perm_grid.on("afteredit", SubmitPerm, this);
 
-
-	function column_click_handler(puid){
-		//*
-		perm_store.reload({ 
-			params:{ uid:puid },
-			callback:function(rec,scope,success){
-				if(!success){
-					Ext.MessageBox.show({
-			           title: '错误',
-			           msg: '加载权限信息失败！',
-			           buttons: Ext.MessageBox.OK,
-			           icon: Ext.MessageBox.ERROR
-			       });
-				}
-			}
-		});//*/
-	}
 });
 
  </script>

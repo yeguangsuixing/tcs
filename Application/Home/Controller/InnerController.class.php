@@ -70,10 +70,30 @@ class InnerController extends TcsController {
 			$this->show("添加失败！创建对象错误！");
 		}
 	}
-	public function perm_info_list(){
+	public function perm_info_list($uid=''){
+		$uid = I('uid');
+		if($uid != ''){
+			$cond['uid'] = $uid;
+			$m = M('PermView');
+			$list = $m->where($cond)->select();//dump($list);
+			$this->assign("perm_list", $list);
+			$this->assign("perm_list_count", count($list));
+		} else {
+			$this->assign("perm_list", array());
+			$this->assign("perm_list_count", 0);
+		}
 		$this->display();
 	}
-	public function perm_modify_validate(){
+	//params:{uid:uid, pcheck:pcheck, pcontrol:pcontrol},
+	public function perm_modify_validate($uid='',$did='',$pcheck='',$pcontrol=''){
+		if(I('uid') == '' || I('did') == '' || I('pcheck') == '' || I('pcontrol') == ''){
+			$this->show('参数错误！');return;
+		}
+		$m = M('Perm');
+		$m->create();
+		$m->pcheck = ($m->pcheck == 'true');
+		$m->pcontrol = ($m->pcontrol == 'true');
+		$m->add();
 		$this->show('修改成功！');
 	}
 
