@@ -38,12 +38,39 @@ function addCustomLayer(keyword) {
 }
 addCustomLayer();
 
+/*
+var win;
+Ext.onReady(function(){
+	win = new Ext.Window({
+        //el:'hello-win',
+        layout:'border',
+        width:461,
+        height:616,
+        closeAction:'hide',
+        //plain: true,
+
+        items:[
+        	new Ext.Panel({
+        		contentEl:'node_visual_control_panel',
+        		region:'center'
+        	})
+        ],
+
+        buttons: [{
+            text:'Submit',
+            disabled:true
+        },{
+            text: 'Close',
+            handler: function(){
+                win.hide();
+            }
+        }]
+    });
+});//*/
 var syn_lock_modify = false;//伪同步锁
 function callback(e){
 	var customPoi = e.customPoi;//poi的默认字段
 	var contentPoi=e.content;//poi的自定义字段
-	//var content = '<p style="width:280px;margin:0;line-height:20px;">地址：' + customPoi.address + '<br/>价格:'+contentPoi.dayprice+'元'+'</p>';
-	//alert(customPoi.poiId);
 	if(syn_lock_modify){
 		Ext.example.msg("提示","请等待上一次提交完成！");return;
 	}
@@ -61,7 +88,7 @@ function callback(e){
 			var w = getNodeEditWindow(
 				"节点编辑", 
 				"__ROOT__/Home/Innerf/node_edit", 
-				document.getElementById('nmodeList'),
+				document.getElementById('nmodeList'),null,
 				nodeinfo.id,
 				nodeinfo.name, 
 				nodeinfo.location,
@@ -73,7 +100,7 @@ function callback(e){
 				nodeinfo.nh3,
 				nodeinfo.h2s
 			);
-		    w.show();
+		    w.show();/*//*/
 		    syn_lock_modify = false;
 		},
 		failure:function(){
@@ -81,6 +108,8 @@ function callback(e){
 		    syn_lock_modify = false;
 		}
 	});
+
+   // win.show(this);
 	
 }
 
@@ -114,7 +143,19 @@ document.getElementById("popup_close").onclick = function() {
 		cl.style.display = "none";
 	}	
 };
-
+function clk(){
+	console.log(event);
+}
 
 </script>
+
+<!--
+<div id="hello-win" class="x-hidden"></div>
+
+
+<div id="node_visual_control_panel">
+<img src="__PUBLIC__/assets/pic/p1.jpg" width="446" height="557" onclick='clk()' />
+<img id="scale" style="position:relative;top:-365px;left:-452px;width:115px;height:192px" src="__PUBLIC__/assets/pic/p2.jpg" />
+</div>
+-->
 </html>

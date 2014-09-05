@@ -5,7 +5,7 @@
  <script type="text/javascript">
 function mix_attr_renderer(val){
 	val = ""+val;
-	if(val == "") return '<span style="font-color:gray;">-</span>';
+	if(val == "") return '<span style="color:gray;">-</span>';
 	else return val;
 }
 Ext.onReady(function(){ 
@@ -17,7 +17,7 @@ Ext.onReady(function(){
         //id: 'uid',
 	});
 	msg_store.load({ 
-		params:{ start:0,limit:10 },
+		params:{ start:0,limit:20 },
 		callback:function(rec,scope,success){
 			if(!success){
 				Ext.MessageBox.show({
@@ -39,13 +39,13 @@ Ext.onReady(function(){
 		//viewConfig: { forceFit:true },
 		columns:[
 			//new Ext.grid.RowNumberer(),//增加自动编号，不需要可不必定义
-			{header:"用户ID",dataIndex:"uid", width:100, sortable:true },
-			{header:"用户昵称",dataIndex:"uname", width:150, sortable:true},
-			{header:"发送时间",dataIndex:"mtime", width:220,sortable:true},
-			{header:"内容",dataIndex:"mcontent", sortable:true}
+			{header:"用户ID",dataIndex:"uid", width:100 },
+			{header:"用户昵称",dataIndex:"uname", width:150},
+			{header:"发送时间",dataIndex:"mtime", width:220},
+			{header:"内容",dataIndex:"mcontent"}
 		],
 		bbar: new Ext.PagingToolbar({
-			pageSize: 10,
+			pageSize: 20,
 			store: msg_store,
 			displayInfo: true,
 			displayMsg: '当前显示{0}-{1}条，共{2}条',

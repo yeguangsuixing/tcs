@@ -20,6 +20,10 @@ Ext.grid.CheckColumn.prototype ={
     onMouseDown : function(e, t){
         if(t.className && t.className.indexOf('x-grid3-cc-'+this.id) != -1){
             e.stopEvent();
+            if(t.className.indexOf('tcs-checkbox-disabled') >= 0){
+                alert('不能修改！');
+                return;
+            }
             var index = this.grid.getView().findRowIndex(t);
             var record = this.grid.store.getAt(index);
             record.set(this.dataIndex, !record.data[this.dataIndex]);
@@ -32,7 +36,7 @@ Ext.grid.CheckColumn.prototype ={
 
     renderer : function(v, p, record){
         p.css += ' x-grid3-check-col-td'; 
-        return '<div class="x-grid3-check-col'+(v?'-on':'')+' x-grid3-cc-'+this.id+'">&#160;</div>';
+        return '<div class="'+(this.pcheck?'tcs-checkbox-disabled':'')+' x-grid3-check-col'+(v?'-on':'')+' x-grid3-cc-'+this.id+'">&#160;</div>';
     }
 };
 
@@ -53,7 +57,7 @@ Ext.example = function(){
             msgCt.alignTo(document, 't-t');
             var s = String.format.apply(String, Array.prototype.slice.call(arguments, 1));
             var m = Ext.DomHelper.append(msgCt, {html:createBox(title, s)}, true);
-            m.slideIn('t').pause(100).ghost("t", {remove:true});
+            m.slideIn('t').pause(2).ghost("t", {remove:true});
         }
     };
 }();

@@ -11,8 +11,12 @@ class IndexController extends TcsController {
 
     public function index(){
         if(session('uid') == null) {
-            //$this->redirect('Home/Index/login', 0, 0, '');
-            //return;
+            $this->redirect('Home/Index/login', 0, 0, '');
+            return;
+        }
+        if(session('utype') != '1'){
+            $this->redirect('/Home/Indexf/index', 0, 0, '');
+            return;
         }
         //$this->show('index'.session('uid'));
         $this->display();
@@ -25,6 +29,12 @@ class IndexController extends TcsController {
         $this->display();
     }
 
+    public function logoff(){
+        session(null);
+        //$this->redirect('Home/Index/login', 0, 0, '');
+        $this->success($this->T_LOGOFF_SUCCEED,__ROOT__.'/Home/Index/login', $this->C_TIME_REDIRECT);
+    }
+
     public function login_validate(){
         //$this->show(I('uid').'<br />');
         //$this->show(I('password').'<br />');
@@ -34,6 +44,10 @@ class IndexController extends TcsController {
         if($user->create()){
             $t = $user->where($data)->select();
             if($t){
+                $update['uid'] = $data['uid'];
+                $update['last_login'] = date('Y-m-d H:i:s', time());
+                D('User')->save($update);
+
                 session('uid', $t[0]['uid']);
                 session('uname', $t[0]['uname']);
                 session('password', $t[0]['password']);
@@ -41,26 +55,18 @@ class IndexController extends TcsController {
                 session('email', $t[0]['email']);
                 session('mobilephone', $t[0]['mobilephone']);
                 session('utype', $t[0]['utype']);
-                $this->success($this->T_LOGIN_SUCCEED,__ROOT__.'/Home/Index/index', $this->C_TIME_REDIRECT);
+                $url = '/Home/Indexf';
+                if($t[0]['utype'] == '1'){//超管
+                    $url = '/Home/Index';
+                }
+                $this->success($this->T_LOGIN_SUCCEED,__ROOT__.$url, $this->C_TIME_REDIRECT);
                 //$this->redirect('/Home/Index/index', 0, 5, '页面跳转中...');
             } else {
-                $this->show('login_FAILED.');
+                $this->show('登录失败.');
             }
         } else {
             $this->error($user->getError());
         }
     }
 
-    public function hello(){
-    	$this->name = "My ThinkPHP";
-    	$this->display();
-    }
-    public function hellodb(){
-        $Data = M('data'); // 实例化Data数据模型
-        $this->data = $Data->select();
-        $this->display();
-    }
-    public function test(){
-    	$this->show('test!');
-    }
 }

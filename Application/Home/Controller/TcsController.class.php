@@ -19,9 +19,10 @@ class TcsController extends Controller {
 
 //所有以T开头的表示页面提示
 	public $T_LOGIN_SUCCEED = '登录成功！';
+	public $T_LOGOFF_SUCCEED = '退出成功！正在转到登录界面……';
 
 //所有以C开头的表示常量
-	public $C_TIME_REDIRECT = 3;
+	public $C_TIME_REDIRECT = 2;
 
 	public function __construct(){
 		parent::__construct();

@@ -10,15 +10,9 @@ class IndexfController extends TcsController {
 
     public function index(){
         if(session('uid') == null) {
-            //$this->redirect('Home/Index/login', 0, 0, '');
-            //return;
+            $this->redirect('Home/Index/login', 0, 0, '');
+            return;
         }
         $this->display();
-    }
-
-   
-
-    public function test(){
-    	$this->show('test!');
     }
 }

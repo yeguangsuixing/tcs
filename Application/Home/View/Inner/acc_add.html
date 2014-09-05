@@ -149,7 +149,7 @@ Ext.onReady(function(){
             text: '添加',
             handler:function acc_add_submit(){
                 //var f = Ext.get('acc_add_formpanel');
-                alert(Ext.getCmp('acc_add_pcheck').getValue());
+                //alert(Ext.getCmp('acc_add_pcheck').getValue());
                 //f.form.submit({
                 Ext.Ajax.request({
                     url:'__ROOT__/Home/Inner/acc_add_validate',
@@ -160,9 +160,9 @@ Ext.onReady(function(){
                         password:Ext.getCmp('acc_add_password').getValue(),
                         email:Ext.getCmp('acc_add_email').getValue(),
                         mobilephone:Ext.getCmp('acc_add_mobilephone').getValue(),
-                        utype:Ext.getCmp('acc_add_utype').getValue(),
-                        pcheck:Ext.getCmp('acc_add_pcheck').getValue(),
-                        pcontrol:Ext.getCmp('acc_add_pcontrol').getValue()
+                        utype:Ext.getCmp('acc_add_utype').getValue()
+                        //pcheck:Ext.getCmp('acc_add_pcheck').getValue(),
+                        //pcontrol:Ext.getCmp('acc_add_pcontrol').getValue()
                     },
                     success:function(response, options){
                         //Ext.MessageBox.alert('警告', response.responseText);

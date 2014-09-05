@@ -8,6 +8,7 @@ function getNodeEditWindow_change_mode_select(nmode){
         Ext.getCmp('node_edit_mix_scale').el.parent().prev().dom.innerText = '自动混合比例:';
         Ext.getCmp('node_edit_mix_level').el.parent().prev().dom.innerText = '自动混合量:';
         Ext.getCmp('node_edit_mix_freq').el.parent().prev().dom.innerText = '自动喷洒量:';
+        Ext.getCmp('node_edit_cleanup_time').el.parent().prev().dom.innerText = '自动喷洒持续(秒):';
         Ext.getCmp('node_edit_nh3').setDisabled(false);
         Ext.getCmp('node_edit_h2s').setDisabled(false);
         Ext.getCmp('node_edit_btn_mix').setDisabled(true);
@@ -17,6 +18,7 @@ function getNodeEditWindow_change_mode_select(nmode){
         Ext.getCmp('node_edit_mix_scale').el.parent().prev().dom.innerText = '手动混合比例:';
         Ext.getCmp('node_edit_mix_level').el.parent().prev().dom.innerText = '手动混合量:';
         Ext.getCmp('node_edit_mix_freq').el.parent().prev().dom.innerText = '手动喷洒量:';
+        Ext.getCmp('node_edit_cleanup_time').el.parent().prev().dom.innerText = '手动喷洒持续(秒):';
         Ext.getCmp('node_edit_nh3').setDisabled(true);
         Ext.getCmp('node_edit_h2s').setDisabled(true);
         Ext.getCmp('node_edit_btn_mix').setDisabled(false);
@@ -24,8 +26,8 @@ function getNodeEditWindow_change_mode_select(nmode){
         //Ext.getCmp('node_edit_btn_submit').setText('保存');
     }
 }
-function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpos, 
-    pvmode, pvscale, pvlevel, pvfreq, pvnh3, pvh2s){
+function getNodeEditWindow(ptitle, purl, pemodeselect, pstore, pvid, pvname, pvloc, pvpos, 
+    pvmode, pvscale, pvlevel, pvfreq, pvcleanup_time/*喷洒持续时间*/, pvnh3, pvh2s){
 	if(!node_edit_window){
 		pemodeselect.style.display="";
         var modeselect = new Ext.form.ComboBox({
@@ -123,6 +125,14 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpo
                 value:pvfreq,
                 allowBlank:true
             },{
+                fieldLabel: pvmode==0?'自动喷洒持续(秒)':'手动喷洒持续(秒)',
+                id:'node_edit_cleanup_time',
+                name: 'node_edit_cleanup_time',
+                style:'font-size:18px;',
+                itemCls:'tcs_select_item',
+                value:pvcleanup_time,
+                allowBlank:true
+            },{
                 fieldLabel:'自动喷洒NH<sub>3</sub>阈值',
                 id:'node_edit_nh3',
                 value:pvnh3,
@@ -145,13 +155,13 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpo
             title:'节点编辑与控制',
             layout:'form',
             width:500,
-            height:426,
+            height:466,
             closeAction:'hide',
             plain: true,
             modal:true,
             items: node_edit_form,
             buttons: [{
-                text:'启动混合',
+                text:'设置混合参数',
                 disabled:pvmode==0,
                 id:'node_edit_btn_mix',
                 handler:function(elem){
@@ -168,7 +178,7 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpo
                         },
                         success:function(response, options){
                             //Ext.MessageBox.alert('警告', response.responseText);
-                            node_edit_window.hide();
+                            //node_edit_window.hide();
                             elem.setDisabled(false);
                             Ext.example.msg("提示", response.responseText);
                         },
@@ -179,7 +189,7 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpo
                     });
                 }
             },{
-                text:'启动喷洒',
+                text:'设置喷洒参数',
                 disabled:pvmode==0,
                 id:'node_edit_btn_cleanup',
                 handler:function(elem){
@@ -191,11 +201,12 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpo
                             pnid:Ext.getCmp('node_edit_nid').getValue(),
                             pnmode:3,
                             pnname:Ext.getCmp('node_edit_nname').getValue(),
-                            pmix_freq:Ext.getCmp('node_edit_mix_freq').getValue()
+                            pmix_freq:Ext.getCmp('node_edit_mix_freq').getValue(),
+                            pcleanup_time:Ext.getCmp('node_edit_cleanup_time').getValue()
                         },
                         success:function(response, options){
                             //Ext.MessageBox.alert('警告', response.responseText);
-                            node_edit_window.hide();
+                            //node_edit_window.hide();
                             elem.setDisabled(false);
                             Ext.example.msg("提示", response.responseText);
                         },
@@ -228,6 +239,9 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pvid, pvname, pvloc, pvpo
 							node_edit_window.hide();
 							elem.setDisabled(false);
 							Ext.example.msg("提示", response.responseText);
+                            if(pstore){
+                                pstore.reload();
+                            }
 						},
 						failure:function(response, options){
 							elem.setDisabled(false);

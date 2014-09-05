@@ -14,6 +14,8 @@ Ext.onReady(function(){
 	var node_store = new Ext.data.JsonStore({
 		//data:node_data,
 		idPropery:"id",
+		totalProperty:'totalCount',
+		root:'root',
 		//remoteSort:true,
 		fields:["id","name", "lng", "lat", "first_access", "last_access", 
 			"nmode", "auto_mix_scale", "auto_mix_level", "auto_mix_freq", 
@@ -50,19 +52,48 @@ Ext.onReady(function(){
             handler:function(elem){
             	elem.setDisabled(true);
             	node_store.reload({
-            		start:0,
-            		limit:10, 
+            		params:{start:0, limit:20, 
             		name:Ext.getCmp('node_query_nname').getValue(), 
-            		position:Ext.getCmp('node_query_nposition').getValue() ,
-            		callback:function(){
+            		position:Ext.getCmp('node_query_nposition').getValue()
+            	}
+            		,
+            		callback:function(rec,scope,success){
             			elem.setDisabled(false);
+            			if(!success){
+							Ext.MessageBox.show({
+					           title: '错误',
+					           msg: '查找节点列表失败！',
+					           buttons: Ext.MessageBox.OK,
+					           icon: Ext.MessageBox.ERROR
+					       });
+						} else {
+							//console.log(rec);
+							//console.log(scope);
+							//console.log(success);
+						}
             		}
             	});
             }
         }]
     });
 
-	node_store.load({ params:{ start:0,limit:10 } });
+	node_store.load({ 
+		params:{ start:0,limit:20 },
+		callback:function(rec,scope,success){
+			if(!success){
+				Ext.MessageBox.show({
+		           title: '错误',
+		           msg: '加载节点列表失败！',
+		           buttons: Ext.MessageBox.OK,
+		           icon: Ext.MessageBox.ERROR
+		       });
+			} else {
+				//console.log(rec);
+				//console.log(scope);
+				//console.log(success);
+			}
+		}
+	});
 	var node_grid = new Ext.grid.GridPanel({
 		renderTo:"node_info",
 		title:"节点信息", 
@@ -75,7 +106,7 @@ Ext.onReady(function(){
 		},
 		columns:[
 			new Ext.grid.RowNumberer(),
-			{header:"ID",dataIndex:"id", width:150, sortable:true, 
+			{header:"节点ID",dataIndex:"id", width:210, sortable:true, 
 				renderer:function(val){
 					return val;
 					//return '<a href="javascript:(0)" onclick="ShowNodeEditPanel(this)">'+val+'</a>';
@@ -84,9 +115,9 @@ Ext.onReady(function(){
 			{header:"名称",dataIndex:"name", sortable:true},
 			{header:"经度",dataIndex:"lng", width:100,sortable:true},
 			{header:"纬度",dataIndex:"lat", width:100,sortable:true},
-			{header:"创建时间",dataIndex:"first_access", width:150, sortable:true},
-			{header:"停止时间",dataIndex:"last_access", width:150, sortable:true},
-			{header:"模式",dataIndex:"nmode", width:50, sortable:true,
+			{header:"创建时间",dataIndex:"first_access", width:150,hidden:true},
+			{header:"停止时间",dataIndex:"last_access", width:150},
+			{header:"模式",dataIndex:"nmode", width:50,
 				renderer:function(val){
 					val = "" + val;
 					switch(val){
@@ -96,11 +127,11 @@ Ext.onReady(function(){
 					}
 				}
 			},
-			{header:"NH<sub>3</sub>阈值",dataIndex:"nh3", sortable:true},
-			{header:"H<sub>2</sub>S阈值",dataIndex:"h2s", sortable:true},
+			{header:"NH<sub>3</sub>阈值",dataIndex:"nh3"},
+			{header:"H<sub>2</sub>S阈值",dataIndex:"h2s"},
 			{header:"混合比例",dataIndex:"auto_mix_scale", sortable:true},
 			{header:"混合量",dataIndex:"auto_mix_level", sortable:true},
-			{header:"喷洒频率",dataIndex:"auto_mix_freq", sortable:true},
+			{header:"喷洒频率/时间",dataIndex:"auto_mix_freq", sortable:true},
 			{header:"所属区县",dataIndex:"district", sortable:true},
 			{header:"所属城市",dataIndex:"city", sortable:true},
 			{header:"所属省份",dataIndex:"province", sortable:true}
@@ -109,13 +140,13 @@ Ext.onReady(function(){
 			pageSize: 10,
 			store: node_store,
 			displayInfo: true,
-			displayMsg: 'Display nodes {0} - {1} of {2}',
-			emptyMsg: 'Nothing to Display'
+			displayMsg: '显示{0}到{1}条，共{2}条',
+			emptyMsg: '无数据'
 		}),
 		store:node_store//, autoExpandColumn:2
 	});
 	var syn_lock_modify = false;
-	node_grid.addListener("rowclick", function(sm, rowIndex, e){
+	node_grid.addListener("rowdblclick", function(sm, rowIndex, e){
 		var selmodel = node_grid.getSelectionModel();
 		var rec = selmodel.getSelected();
 		//alert(rec.data["id"]);
@@ -143,7 +174,7 @@ Ext.onReady(function(){
 				var w = getNodeEditWindow(
 					"节点编辑", 
 					"__ROOT__/Home/Innerf/node_edit", 
-					document.getElementById('nmodeList'),
+					document.getElementById('nmodeList'),node_store,
 					nodeinfo.id,
 					nodeinfo.name, 
 					nodeinfo.location,
@@ -152,6 +183,7 @@ Ext.onReady(function(){
 					nodeinfo.scale,
 					nodeinfo.level,
 					nodeinfo.freq,
+					nodeinfo.cleanup_time,
 					nodeinfo.nh3,
 					nodeinfo.h2s
 				);

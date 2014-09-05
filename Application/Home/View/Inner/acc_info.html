@@ -22,7 +22,33 @@ function column_click_handler(puid){
 		}
 	});//*/
 }
+var acc_store;
+function delete_handler(puid){
+	Ext.MessageBox.show({
+		title: '注意',
+		msg: "您确定要删除ID为"+puid+"的用户吗？",
+		buttons: Ext.MessageBox.OK,
+		//animEl: 'mb9',
+		fn: function(btn){
+			if(btn != 'ok') return;
+			Ext.Ajax.request({
+				url:'__ROOT__/Home/Inner/acc_delete',
+				method:"GET",
+				params:{uid:puid},
+				success:function(response, options){
+					Ext.example.msg("提示", response.responseText);
+					acc_store.reload();
+				},
+				failure:function(response, options){
+					Ext.example.msg("提示", response.responseText);
+				}
+			});
+		},
+       icon: Ext.MessageBox.WARNING
+   });
 
+	
+}
 Ext.onReady(function(){ 
 	var acc_data = [ 
 		//['NJ0001', '管理员1', '2014年8月3日16:01:51', '2014年8月3日17:36:31', 'nj0001@tcs.com', '15900000001', 2],
@@ -37,7 +63,7 @@ Ext.onReady(function(){
 			<neq name="k" value="$user_list_count">,</neq>
 		</volist>
 	];
-	var acc_store = new Ext.data.SimpleStore({
+	acc_store = new Ext.data.SimpleStore({
 		data: acc_data,
 		fields: ["uid","uname","create_time", "last_login", "email", "mobilephone", "utype"]
 	});
@@ -80,7 +106,7 @@ Ext.onReady(function(){
 					switch(val){
 						case '2':return "普通管理员";
 						case '3':return "巡检员";
-						default:return '<span style="font-color:red">错误</span>';
+						default:return '<span style="color:red">错误</span>';
 					}
 				},
 				editor:new Ext.form.ComboBox({
@@ -88,6 +114,12 @@ Ext.onReady(function(){
 					triggerAction: 'all',
 					lazyRender:true
 				})
+			},
+			{header:"操作",dataIndex:"uid", width:100, sortable:true,
+				renderer:function(val){
+					var t = '<span onclick="delete_handler(&quot;id&quot;)" style="cursor:pointer">删除</span>';
+					return t.replace(/id/g, val);
+				}
 			}
 		],
 		store:acc_store
@@ -126,6 +158,7 @@ Ext.onReady(function(){
 	var checkColumn = new Ext.grid.CheckColumn({
        header: "是否可查看",
        dataIndex: 'pcheck',
+       pcheck:true,
        width: 180
     });
 	var ctrlColumn = new Ext.grid.CheckColumn({

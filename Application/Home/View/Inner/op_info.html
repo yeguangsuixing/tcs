@@ -5,7 +5,7 @@
  <script type="text/javascript">
 function mix_attr_renderer(val){
 	var val = ""+val;
-	if(val == "") return '<span style="font-color:gray;">-</span>';
+	if(val == "") return '<span style="color:gray;">-</span>';
 	else return val;
 }
 Ext.onReady(function(){ 
@@ -16,7 +16,7 @@ Ext.onReady(function(){
 		totalProperty:'totalCount'
 	});
 	op_store.load({ 
-		params:{ start:0,limit:15 },
+		params:{ start:0,limit:20 },
 		callback:function(rec,scope,success){
 			if(!success){
 				Ext.MessageBox.show({
@@ -38,30 +38,30 @@ Ext.onReady(function(){
 		//viewConfig: { forceFit:true },
 		columns:[
 			//new Ext.grid.RowNumberer(),//增加自动编号，不需要可不必定义
-			{header:"操作ID",dataIndex:"oid", width:50, sortable:true, hidden:true },
-			{header:"节点ID",dataIndex:"nid", width:210, sortable:true},
-			{header:"节点名称",dataIndex:"nname", width:100,sortable:true},
-			{header:"类型",dataIndex:"otype", width:180,sortable:true,
+			{header:"操作ID",dataIndex:"oid", width:50, hidden:true },
+			{header:"节点ID",dataIndex:"nid", width:210},
+			{header:"节点名称",dataIndex:"nname", width:100},
+			{header:"类型",dataIndex:"otype", width:180,
 				renderer:function(val){
 					var val = ""+val;
 					switch(val){
-						case '1':return "设置自动模式数据";
-						case '2':return "设置单次喷洒数据";
-						case '3':return "启动混合";
-						case '4':return "启动喷洒";
-						default:return '<span style="font-color:red;">未知操作类型</span>';
+						case '0':return "设置为自动模式";
+						case '1':return "设置为手动模式";
+						case '2':return "启动混合";
+						case '3':return "启动喷洒";
+						default:return '<span style="color:red;">未知操作类型</span>';
 					}
 				}
 			},
-			{header:"操作时间",dataIndex:"otime", width:220, sortable:true},
-			{header:"模式",dataIndex:"nmode", width:50, sortable:true, renderer:mix_attr_renderer,hidden:true },
-			{header:"混合比例",dataIndex:"mix_scale", sortable:true, renderer:mix_attr_renderer},
-			{header:"混合量",dataIndex:"mix_level", sortable:true, renderer:mix_attr_renderer},
-			{header:"喷洒频率",dataIndex:"mix_freq", sortable:true, renderer:mix_attr_renderer},
-			{header:"位置",dataIndex:"loc", sortable:true }
+			{header:"操作时间",dataIndex:"otime", width:220},
+			{header:"模式",dataIndex:"nmode", width:50, renderer:mix_attr_renderer,hidden:true },
+			{header:"混合比例",dataIndex:"mix_scale", renderer:mix_attr_renderer},
+			{header:"混合量",dataIndex:"mix_level", renderer:mix_attr_renderer},
+			{header:"喷洒频率",dataIndex:"mix_freq", renderer:mix_attr_renderer},
+			{header:"位置",dataIndex:"loc" }
 		],
 		bbar: new Ext.PagingToolbar({
-			pageSize: 15,
+			pageSize: 20,
 			store: op_store,
 			displayInfo: true,
 			displayMsg: '当前显示{0}-{1}条，共{2}条',
