@@ -63,7 +63,7 @@ class InnerfController extends TcsController {
 		$nh3 = I('pnh3');
 		$h2s = I('ph2s');
 
-		if(!$this->perm_check(I('uid'),I('nid'))){
+		if(!$this->perm_check(session('uid'),$nid)){
 			$this->show('权限受限，修改失败！');
 			return;
 		}
@@ -150,6 +150,9 @@ class InnerfController extends TcsController {
 				$opdata['oresult'] = 1;
 				$o->save($opdata);
 				$this->show("节点".$nid."设置混合参数成功！");
+			} else if($resp == "10061"){
+				$this->show("节点".$nid."设置混合参数失败！错误信息：无法连接到中间服务器$this->TCS_MAS_HOST:".
+					$this->TCS_MAS_PORT." 。请超级管理员设置中间服务器参数！");
 			} else {
 				$this->show("节点".$nid."设置混合参数失败！错误信息：".$resp);
 			}
@@ -163,6 +166,9 @@ class InnerfController extends TcsController {
 				$opdata['oresult'] = 1;
 				$o->save($opdata);
 				$this->show("节点".$nid."设置喷洒参数成功！");
+			} else if($resp == "10061"){
+				$this->show("节点".$nid."设置喷洒参数失败！错误信息：无法连接到中间服务器$this->TCS_MAS_HOST:".
+					$this->TCS_MAS_PORT." 。请超级管理员设置中间服务器参数！");
 			} else {
 				$this->show("节点".$nid."设置喷洒参数失败！错误信息：".$resp);
 			}
@@ -178,7 +184,9 @@ class InnerfController extends TcsController {
 		$m = M('PermNodeView');
 		$lim['uid'] = $uid;
 		$lim['nid'] = $nid;
-		if($m->where($lim)->find()){
+		$tt = $m->where($lim)->find();
+		//echo $m->_sql();
+		if($tt){
 			return true;
 		} else {
 			return false;

@@ -26,6 +26,19 @@ class TcsController extends Controller {
 
 	public function __construct(){
 		parent::__construct();
+		$configModel = M('Config');
+		$lim['type'] = 'server_ip';
+		$result = $configModel->where($lim)->find();
+		if($result){
+			$this->TCS_MAS_HOST = $result['value'];
+			//echo $this->TCS_MAS_HOST;
+		}
+		$lim['type'] = 'server_port';
+		$result = $configModel->where($lim)->find();
+		if($result){
+			$this->TCS_MAS_PORT = $result['value'];
+			//echo $this->TCS_MAS_PORT;
+		}
         $this->TCS_TITLE = $this->TCS_NAME." - ".$this->TCS_TITLE_POS;
 	}
 

@@ -206,6 +206,44 @@ class InnerController extends TcsController {
 		}
 	}
 
+
+    public function tcs_server(){
+        if(session('uid') == null) {
+            $this->redirect('Home/Index/login', 0, 0, '');
+            return;
+        }
+        if(session('utype') != '1'){
+            $this->redirect('/Home/Indexf/index', 0, 0, '');
+            return;
+        }
+        $this->server_ip = $this->TCS_MAS_HOST;
+        $this->server_port = $this->TCS_MAS_PORT;
+        $this->display();
+    }
+
+    public function tcs_server_v($server_ip='',$server_port=''){
+        $server_ip = I('server_ip');
+        $server_port = I('server_port');
+        if($server_ip == '' || $server_port == ''){
+            $this->show('{"result":1,"msg":"参数错误！"}');
+        }
+        $configModel = M('Config');
+        $data['type'] = 'server_ip';
+        $data['value'] = $server_ip;
+        $data['cfg_time'] = date('Y-m-d H:i:s', time());
+        if($configModel->save($data) == false){
+            $this->show('{"result":1,"msg":"保存服务器IP失败！"}');
+            return;
+        }
+        $data['type'] = 'server_port';
+        $data['value'] = $server_port;
+        if($configModel->save($data) == false){
+            $this->show('{"result":1,"msg":"保存服务器端口失败！"}');
+            return;
+        }
+        $this->show('{"result":0,"msg":"保存成功！"}');
+    }
+
 }
 
 

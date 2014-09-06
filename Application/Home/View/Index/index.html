@@ -58,6 +58,11 @@ Ext.onReady(function(){
                     title:'我的账户',
                     border:false,
                     iconCls:'settings'
+                },{
+                    contentEl: 'tcs_menu_tcs',
+                    title:'参数管理',
+                    border:false,
+                    iconCls:'nav'
                 }]
             },
             main_tab_panel
@@ -123,19 +128,21 @@ function addTcsTab(elem, turl, isclosable) {
         <!--<div class="tcs_menu_item" id="tcs_menu_item_my_info" onclick="addTcsTab(this, 'test')">我的资料</div>-->
         <div class="tcs_menu_item" id="tcs_menu_item_password_modify" onclick="addTcsTab(this, '__ROOT__/Home/Inner/password_modify')">密码修改</div>
   </div>
+  <div id="tcs_menu_tcs">
+        <div class="tcs_menu_item" id="tcs_menu_item_tcs_server" onclick="addTcsTab(this, '__ROOT__/Home/Inner/tcs_server')">服务器参数</div>
+  </div>
 
   <div id="north">
-    <div style="float:right;font-size:12pt;color:red;font-weight:bold;margin-right:30px;margin-top:10px;">
-        <a href="__ROOT__/Home/Index/logoff">退出</a>
+    <div style="float:right;font-size:12pt;font-weight:bold;margin-right:30px;margin-top:10px;color:black">
+        你好，{$Think.session.uname}！&nbsp;&nbsp;<a href="__ROOT__/Home/Index/logoff" style="color:red;">退出</a>
     </div>
     <span style="font-size:40px;font-weight:400;margin-left:50px">{$system_name}</span>
   </div>
 
 
  
-<script language="javascript">
-    
 
+<script type="text/javascript">
 </script>
 
  </body>
