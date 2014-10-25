@@ -142,13 +142,13 @@ class InnerfController extends TcsController {
 		} else if($nmode == '2'){
 			$url = "/?type=ctrl&nid=$nid&mode=2&scale=$scale&level=$level&";
 			$resp = $this->conn_middle_application_server($url);
+			$nodedata['nmode'] = '1';
+			$nodedata['auto_mix_level'] = $level;
+			$nodedata['auto_mix_scale'] = $scale;
+			$m->save($nodedata);
+			$opdata['oresult'] = 1;
+			$o->save($opdata);
 			if($resp == "result:1"){
-				$nodedata['nmode'] = '1';
-				$nodedata['auto_mix_level'] = $level;
-				$nodedata['auto_mix_scale'] = $scale;
-				$m->save($nodedata);
-				$opdata['oresult'] = 1;
-				$o->save($opdata);
 				$this->show("节点".$nid."设置混合参数成功！");
 			} else if($resp == "10061"){
 				$this->show("节点".$nid."设置混合参数失败！错误信息：无法连接到中间服务器$this->TCS_MAS_HOST:".
@@ -159,12 +159,12 @@ class InnerfController extends TcsController {
 		} else if($nmode == '3'){
 			$url = "/?type=ctrl&nid=$nid&mode=3&freq=$freq&time=$cleanup_time";
 			$resp = $this->conn_middle_application_server($url);
+			$nodedata['nmode'] = '1';
+			$nodedata['auto_mix_freq'] = $freq;
+			$m->save($nodedata);
+			$opdata['oresult'] = 1;
+			$o->save($opdata);
 			if($resp == "result:1"){
-				$nodedata['nmode'] = '1';
-				$nodedata['auto_mix_freq'] = $freq;
-				$m->save($nodedata);
-				$opdata['oresult'] = 1;
-				$o->save($opdata);
 				$this->show("节点".$nid."设置喷洒参数成功！");
 			} else if($resp == "10061"){
 				$this->show("节点".$nid."设置喷洒参数失败！错误信息：无法连接到中间服务器$this->TCS_MAS_HOST:".

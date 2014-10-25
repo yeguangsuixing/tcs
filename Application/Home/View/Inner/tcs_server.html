@@ -1,0 +1,83 @@
+<html>
+ <head>
+   <title>TCS SERVER</title>
+ </head>
+ <body>
+<script type="text/javascript">
+
+function tcs_server_submit(){
+    var t = this;
+    t.disabled = true;
+    Ext.Ajax.request({
+        url:'__ROOT__/Home/Inner/tcs_server_v',
+        method:"POST",
+        params:{
+            server_ip:Ext.getCmp('server_ip').getValue(),
+            server_port:Ext.getCmp('server_port').getValue()
+        },
+        type:'json',
+        success:function(response, options){
+            //Ext.MessageBox.alert('警告', response.responseText);
+            t.disabled = false;
+            var jsonResult = response.responseText.evalJSON();
+            if(jsonResult.result == 0){
+                Ext.example.msg("提示", jsonResult.msg);
+            }else{
+                Ext.example.msg("错误", jsonResult.msg);
+            }
+        },
+        failure:function(response, options){
+            t.disabled = false;
+            Ext.example.msg("错误", response.responseText);
+        }
+    });
+}
+Ext.onReady(function(){
+
+    Ext.QuickTips.init();
+    Ext.form.Field.prototype.msgTarget = 'side';//'qtip';//'under';
+
+    var simple = new Ext.FormPanel({
+        labelWidth: 75, // label settings here cascade unless overridden
+        //url:'login_validate.php',
+        renderTo:"tcs_server_div",
+        frame:true,
+        title: '',
+        style:'margin:5px',
+        width: 550,
+        defaults: {width: 230},
+        defaultType:'textfield',
+        layout:"form",
+        items: [{
+                fieldLabel: '服务器IP地址',
+                id:'server_ip',
+                name: 'server_ip',
+                allowBlank:false,
+                //inputType:'text',
+                value:'{$server_ip}',
+                blankText:'请输入服务器IP'
+            },{
+                fieldLabel: '服务器端口',
+                id:'server_port',
+                name: 'server_port',
+                allowBlank:false,
+                //inputType:'text',
+                value:'{$server_port}',
+                blankText:'请输入服务器端口'
+            }
+        ],
+
+        buttons: [{
+            text: '确认修改',
+            handler:tcs_server_submit
+        }]
+    });
+
+});
+</script>
+<div id="tcs_server_div">
+
+</div>
+ </body>
+
+</html>

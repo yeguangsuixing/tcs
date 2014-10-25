@@ -54,7 +54,7 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pstore, pvid, pvname, pvl
         //console.log(pvmode);
         modeselect.on('select',function(elem){ getNodeEditWindow_change_mode_select(elem.value); });
 		var node_edit_form = new Ext.FormPanel({
-	        labelWidth: 150,
+	        labelWidth: 180,
 	        frame:true,
 	        //title: ptitle,
 	        style:'margin:auto',
@@ -133,7 +133,7 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pstore, pvid, pvname, pvl
                 value:pvcleanup_time,
                 allowBlank:true
             },{
-                fieldLabel:'自动喷洒NH<sub>3</sub>阈值',
+                fieldLabel:'自动喷洒MQ136阈值',
                 id:'node_edit_nh3',
                 value:pvnh3,
                 style:'font-size:18px;',
@@ -141,7 +141,7 @@ function getNodeEditWindow(ptitle, purl, pemodeselect, pstore, pvid, pvname, pvl
                 disabled:pvmode==1,
                 allowBlank:true
             },{
-                fieldLabel:'自动喷洒H<sub>2</sub>S阈值',
+                fieldLabel:'自动喷洒MQ137阈值',
                 id:'node_edit_h2s',
                 value:pvh2s,
                 style:'font-size:18px;',

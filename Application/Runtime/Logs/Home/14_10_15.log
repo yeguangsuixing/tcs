@@ -1,0 +1,1865 @@
+[ 2014-10-15T19:48:41+08:00 ] ::1 /tcs/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.042003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.044003s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.228013s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+
+[ 2014-10-15T19:48:43+08:00 ] ::1 /tcs/index.php/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.009000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010000s ]
+NOTIC: [8] Undefined variable: title D:\Xampp\htdocs\tcs\Application\Runtime\Cache\Home\ccea6a400660ce54d68cab67b9f68781.php 第 3 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.283016s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.285016s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.038003s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.041003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.018001s ]
+
+[ 2014-10-15T19:48:58+08:00 ] ::1 /tcs/index.php/Home/Index/login_validate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.060004s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_user` [ RunTime:0.288016s ]
+SQL: SELECT * FROM `t_user` WHERE `uid` = 'test' AND `password` = '12345'  [ RunTime:0.032001s ]
+SQL: UPDATE `t_user` SET `last_login`='2014-10-15 19:48:58' WHERE `uid` = 'test' [ RunTime:0.041002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.140008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.142008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2014-10-15T19:49:02+08:00 ] ::1 /tcs/Home/Indexf
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.042002s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.087005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.090006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
+[ 2014-10-15T19:49:06+08:00 ] ::1 /tcs/Home/Innerf/node_map?_dc=1413373743911
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.179010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.180010s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008001s ]
+
+[ 2014-10-15T19:49:30+08:00 ] ::1 /tcs/Home/Innerf/node_table?_dc=1413373769340
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.007001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003001s ]
+NOTIC: [8] Undefined variable: login_title D:\Xampp\htdocs\tcs\Application\Runtime\Cache\Home\93f02b85b463a0e139870315929eee83.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.133008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.135008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
+[ 2014-10-15T19:49:32+08:00 ] ::1 /tcs/Home/Inner/node_info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.032001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.228013s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 151 行.
+SQL: SELECT COUNT(did) AS tp_count FROM `t_node_view` LIMIT 1   [ RunTime:0.031002s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 153 行.
+SQL: SELECT * FROM `t_node_view` LIMIT 0,20   [ RunTime:0.003001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.225013s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.227013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+
+[ 2014-10-15T19:49:36+08:00 ] ::1 /tcs/Home/Innerf/node_info_single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `t_node_view` WHERE `baidu_id` = '483801216' LIMIT 1   [ RunTime:0.051003s ]
+NOTIC: [8] Undefined index: auto_cleanup_time D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+
+[ 2014-10-15T19:53:46+08:00 ] ::1 /tcs/Home/Innerf/node_info_single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `t_node_view` WHERE `baidu_id` = '483801216' LIMIT 1   [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: auto_cleanup_time D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T19:55:11+08:00 ] ::1 /tcs/Home/Indexf
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.024001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+
+[ 2014-10-15T19:55:12+08:00 ] ::1 /tcs/index.php/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: title D:\Xampp\htdocs\tcs\Application\Runtime\Cache\Home\ccea6a400660ce54d68cab67b9f68781.php 第 3 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.082005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.083005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008000s ]
+
+[ 2014-10-15T19:55:23+08:00 ] ::1 /tcs/index.php/Home/Index/login_validate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `t_user` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `t_user` WHERE `uid` = 'test' AND `password` = '12345'  [ RunTime:0.001000s ]
+SQL: UPDATE `t_user` SET `last_login`='2014-10-15 19:55:22' WHERE `uid` = 'test' [ RunTime:0.438025s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.071004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2014-10-15T19:55:26+08:00 ] ::1 /tcs/Home/Indexf
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009000s ]
+
+[ 2014-10-15T19:55:36+08:00 ] ::1 /tcs/Home/Innerf/node_map?_dc=1413374135163
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.044002s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
+[ 2014-10-15T19:55:39+08:00 ] ::1 /tcs/Home/Innerf/node_table?_dc=1413374138335
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.046003s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: login_title D:\Xampp\htdocs\tcs\Application\Runtime\Cache\Home\93f02b85b463a0e139870315929eee83.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.074005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.075005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2014-10-15T19:55:41+08:00 ] ::1 /tcs/Home/Inner/node_info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.009001s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 151 行.
+SQL: SELECT COUNT(did) AS tp_count FROM `t_node_view` LIMIT 1   [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 153 行.
+SQL: SELECT * FROM `t_node_view` LIMIT 0,20   [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.106006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.108006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2014-10-15T19:57:04+08:00 ] ::1 /tcs/Home/Innerf/node_info_single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.011000s ]
+SQL: SELECT * FROM `t_node_view` WHERE `baidu_id` = '455405007' LIMIT 1   [ RunTime:0.004000s ]
+NOTIC: [8] Undefined index: auto_cleanup_time D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.060003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T19:58:23+08:00 ] ::1 /tcs/Home/Innerf/node_info_single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.056003s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `t_node_view` WHERE `baidu_id` = '0' LIMIT 1   [ RunTime:0.004000s ]
+NOTIC: [8] Undefined index: auto_cleanup_time D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2014-10-15T19:59:50+08:00 ] ::1 /tcs/Home/Innerf/node_info_single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `t_node_view` WHERE `baidu_id` = '0' LIMIT 1   [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: auto_cleanup_time D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T20:02:10+08:00 ] ::1 /tcs/Home/Innerf/node_table?_dc=1413374529045
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: login_title D:\Xampp\htdocs\tcs\Application\Runtime\Cache\Home\93f02b85b463a0e139870315929eee83.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T20:02:11+08:00 ] ::1 /tcs/Home/Inner/node_info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.069004s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.012001s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 151 行.
+SQL: SELECT COUNT(did) AS tp_count FROM `t_node_view` LIMIT 1   [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 153 行.
+SQL: SELECT * FROM `t_node_view` LIMIT 0,20   [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.092005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.094006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
+[ 2014-10-15T20:02:29+08:00 ] ::1 /tcs/Home/Innerf/node_info_single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `t_node_view` WHERE `baidu_id` = '455405007' LIMIT 1   [ RunTime:0.005000s ]
+NOTIC: [8] Undefined index: auto_cleanup_time D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009000s ]
+
+[ 2014-10-15T20:04:16+08:00 ] ::1 /tcs/Home/Innerf/node_table?_dc=1413374654807
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: login_title D:\Xampp\htdocs\tcs\Application\Runtime\Cache\Home\93f02b85b463a0e139870315929eee83.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2014-10-15T20:04:17+08:00 ] ::1 /tcs/Home/Inner/node_info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.008001s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 151 行.
+SQL: SELECT COUNT(did) AS tp_count FROM `t_node_view` LIMIT 1   [ RunTime:0.003001s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 153 行.
+SQL: SELECT * FROM `t_node_view` LIMIT 0,20   [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.095006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
+[ 2014-10-15T20:04:20+08:00 ] ::1 /tcs/Home/Innerf/node_info_single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.042003s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `t_node_view` WHERE `baidu_id` = '455405007' LIMIT 1   [ RunTime:0.004000s ]
+NOTIC: [8] Undefined index: auto_cleanup_time D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T20:04:39+08:00 ] ::1 /tcs/Home/Indexf
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+
+[ 2014-10-15T20:04:41+08:00 ] ::1 /tcs/index.php/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003001s ]
+NOTIC: [8] Undefined variable: title D:\Xampp\htdocs\tcs\Application\Runtime\Cache\Home\ccea6a400660ce54d68cab67b9f68781.php 第 3 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.013001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.018001s ]
+
+[ 2014-10-15T20:04:48+08:00 ] ::1 /tcs/index.php/Home/Index/login_validate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.026001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_user` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_user` WHERE `uid` = 'test' AND `password` = '12345'  [ RunTime:0.002000s ]
+SQL: UPDATE `t_user` SET `last_login`='2014-10-15 20:04:48' WHERE `uid` = 'test' [ RunTime:0.021001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009001s ]
+
+[ 2014-10-15T20:04:52+08:00 ] ::1 /tcs/Home/Indexf
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2014-10-15T20:04:58+08:00 ] ::1 /tcs/Home/Innerf/node_map?_dc=1413374697202
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2014-10-15T20:05:00+08:00 ] ::1 /tcs/Home/Innerf/node_table?_dc=1413374699394
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: login_title D:\Xampp\htdocs\tcs\Application\Runtime\Cache\Home\93f02b85b463a0e139870315929eee83.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.081005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010001s ]
+
+[ 2014-10-15T20:05:02+08:00 ] ::1 /tcs/Home/Inner/node_info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.051003s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.010000s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 151 行.
+SQL: SELECT COUNT(did) AS tp_count FROM `t_node_view` LIMIT 1   [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 153 行.
+SQL: SELECT * FROM `t_node_view` LIMIT 0,20   [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.088005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.088005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2014-10-15T20:05:06+08:00 ] ::1 /tcs/Home/Innerf/node_info_single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.006001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `t_node_view` WHERE `baidu_id` = '455405007' LIMIT 1   [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: auto_cleanup_time D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T20:07:23+08:00 ] ::1 /tcs/Home/Innerf/node_edit?_dc=1413374840921&pnid=123456789012345&pnmode=2&pnname=NewNode2&pmix_scale=12&pmix_level=231
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_perm_node_view` [ RunTime:0.204012s ]
+SQL: SELECT * FROM `t_perm_node_view` WHERE `uid` = 'test' AND `nid` = '123456789012345' LIMIT 1   [ RunTime:0.040002s ]
+SQL: SHOW COLUMNS FROM `t_node` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_node` WHERE `nid` = '123456789012345' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_node_op` [ RunTime:0.094005s ]
+SQL: INSERT INTO `t_node_op` (`nid`,`otype`,`otime`,`mix_scale`,`mix_level`,`mix_freq`,`onh3`,`oh2s`,`oresult`) VALUES ('123456789012345','2','2014-10-15 20:07:22',12,231,0,0,0,0) [ RunTime:0.100006s ]
+NOTIC: [2] fsockopen():  D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 208 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2014-10-15T20:07:37+08:00 ] ::1 /tcs/Home/Innerf/node_edit?_dc=1413374855388&pnid=123456789012345&pnmode=2&pnname=NewNode2&pmix_scale=12&pmix_level=231
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.006001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `t_perm_node_view` [ RunTime:0.090005s ]
+SQL: SELECT * FROM `t_perm_node_view` WHERE `uid` = 'test' AND `nid` = '123456789012345' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `t_node` [ RunTime:0.006001s ]
+SQL: SELECT * FROM `t_node` WHERE `nid` = '123456789012345' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_node_op` [ RunTime:0.006001s ]
+SQL: INSERT INTO `t_node_op` (`nid`,`otype`,`otime`,`mix_scale`,`mix_level`,`mix_freq`,`onh3`,`oh2s`,`oresult`) VALUES ('123456789012345','2','2014-10-15 20:07:36',12,231,0,0,0,0) [ RunTime:0.062003s ]
+NOTIC: [2] fsockopen():  D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 208 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
+[ 2014-10-15T20:07:46+08:00 ] ::1 /tcs/Home/Innerf/node_edit?_dc=1413374863767&pnid=123456789012345&pnmode=2&pnname=NewNode2&pmix_scale=12&pmix_level=231
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.043003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.045003s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_perm_node_view` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `t_perm_node_view` WHERE `uid` = 'test' AND `nid` = '123456789012345' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `t_node` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `t_node` WHERE `nid` = '123456789012345' LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `t_node_op` [ RunTime:0.007000s ]
+SQL: INSERT INTO `t_node_op` (`nid`,`otype`,`otime`,`mix_scale`,`mix_level`,`mix_freq`,`onh3`,`oh2s`,`oresult`) VALUES ('123456789012345','2','2014-10-15 20:07:45',12,231,0,0,0,0) [ RunTime:0.079005s ]
+NOTIC: [2] fsockopen():  D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 208 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T20:07:54+08:00 ] ::1 /tcs/Home/Innerf/node_edit?_dc=1413374872438&pnid=123456789012345&pnmode=2&pnname=NewNode2&pmix_scale=12&pmix_level=231
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `t_perm_node_view` [ RunTime:0.065004s ]
+SQL: SELECT * FROM `t_perm_node_view` WHERE `uid` = 'test' AND `nid` = '123456789012345' LIMIT 1   [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `t_node` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_node` WHERE `nid` = '123456789012345' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_node_op` [ RunTime:0.007000s ]
+SQL: INSERT INTO `t_node_op` (`nid`,`otype`,`otime`,`mix_scale`,`mix_level`,`mix_freq`,`onh3`,`oh2s`,`oresult`) VALUES ('123456789012345','2','2014-10-15 20:07:53',12,231,0,0,0,0) [ RunTime:0.037002s ]
+NOTIC: [2] fsockopen():  D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 208 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+
+[ 2014-10-15T20:08:04+08:00 ] ::1 /tcs/Home/Innerf/node_edit?_dc=1413374881674&pnid=123456789012345&pnmode=3&pnname=NewNode2&pmix_freq=11&pcleanup_time=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_perm_node_view` [ RunTime:0.070004s ]
+SQL: SELECT * FROM `t_perm_node_view` WHERE `uid` = 'test' AND `nid` = '123456789012345' LIMIT 1   [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `t_node` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `t_node` WHERE `nid` = '123456789012345' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_node_op` [ RunTime:0.008001s ]
+SQL: INSERT INTO `t_node_op` (`nid`,`otype`,`otime`,`mix_scale`,`mix_level`,`mix_freq`,`onh3`,`oh2s`,`oresult`) VALUES ('123456789012345','3','2014-10-15 20:08:03',0,0,11,0,0,0) [ RunTime:0.029002s ]
+NOTIC: [2] fsockopen():  D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 208 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2014-10-15T20:08:11+08:00 ] ::1 /tcs/Home/Innerf/node_edit?_dc=1413374889447&pnid=123456789012345&pnmode=3&pnname=NewNode2&pmix_freq=11&pcleanup_time=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_perm_node_view` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `t_perm_node_view` WHERE `uid` = 'test' AND `nid` = '123456789012345' LIMIT 1   [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `t_node` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_node` WHERE `nid` = '123456789012345' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_node_op` [ RunTime:0.007001s ]
+SQL: INSERT INTO `t_node_op` (`nid`,`otype`,`otime`,`mix_scale`,`mix_level`,`mix_freq`,`onh3`,`oh2s`,`oresult`) VALUES ('123456789012345','3','2014-10-15 20:08:10',0,0,11,0,0,0) [ RunTime:0.065004s ]
+NOTIC: [2] fsockopen():  D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 208 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
+[ 2014-10-15T20:08:49+08:00 ] ::1 /tcs/Home/Innerf/node_edit?_dc=1413374926515&pnid=123456789012345&pnmode=3&pnname=NewNode2&pmix_freq=11&pcleanup_time=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_perm_node_view` [ RunTime:0.014000s ]
+SQL: SELECT * FROM `t_perm_node_view` WHERE `uid` = 'test' AND `nid` = '123456789012345' LIMIT 1   [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `t_node` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `t_node` WHERE `nid` = '123456789012345' LIMIT 1   [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `t_node_op` [ RunTime:0.008000s ]
+SQL: INSERT INTO `t_node_op` (`nid`,`otype`,`otime`,`mix_scale`,`mix_level`,`mix_freq`,`onh3`,`oh2s`,`oresult`) VALUES ('123456789012345','3','2014-10-15 20:08:47',0,0,11,0,0,0) [ RunTime:0.222013s ]
+NOTIC: [2] fsockopen():  D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 208 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T20:14:30+08:00 ] ::1 /tcs/Home/Indexf
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2014-10-15T20:14:32+08:00 ] ::1 /tcs/Home/Innerf/node_map?_dc=1413375270865
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2014-10-15T20:14:34+08:00 ] ::1 /tcs/Home/Innerf/node_table?_dc=1413375273272
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.046003s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: login_title D:\Xampp\htdocs\tcs\Application\Runtime\Cache\Home\93f02b85b463a0e139870315929eee83.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2014-10-15T20:14:36+08:00 ] ::1 /tcs/Home/Inner/node_info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.006001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.014000s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 151 行.
+SQL: SELECT COUNT(did) AS tp_count FROM `t_node_view` LIMIT 1   [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 153 行.
+SQL: SELECT * FROM `t_node_view` LIMIT 0,20   [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.105006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.111006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009000s ]
+
+[ 2014-10-15T20:14:55+08:00 ] ::1 /tcs/Home/Innerf/node_info_single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `t_node_view` WHERE `baidu_id` = '455405007' LIMIT 1   [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: auto_cleanup_time D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T20:15:22+08:00 ] ::1 /tcs/Home/Indexf
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2014-10-15T20:15:26+08:00 ] ::1 /tcs/Home/Innerf/node_map?_dc=1413375325344
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.043002s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T20:15:28+08:00 ] ::1 /tcs/Home/Innerf/node_table?_dc=1413375327188
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.021001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.005001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: login_title D:\Xampp\htdocs\tcs\Application\Runtime\Cache\Home\93f02b85b463a0e139870315929eee83.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2014-10-15T20:15:30+08:00 ] ::1 /tcs/Home/Inner/node_info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.012001s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 151 行.
+SQL: SELECT COUNT(did) AS tp_count FROM `t_node_view` LIMIT 1   [ RunTime:0.002001s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 153 行.
+SQL: SELECT * FROM `t_node_view` LIMIT 0,20   [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.118007s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.120007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2014-10-15T20:15:32+08:00 ] ::1 /tcs/Home/Innerf/node_info_single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `t_node_view` WHERE `baidu_id` = '455405007' LIMIT 1   [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: auto_cleanup_time D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2014-10-15T20:15:53+08:00 ] ::1 /tcs/Home/Innerf/node_edit?_dc=1413375351945&pnid=123456789012345&pnname=NewNode2&pnmode=1&pmix_scale=12&pmix_level=231&pmix_freq=11&pnh3=12&ph2s=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.023002s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_perm_node_view` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `t_perm_node_view` WHERE `uid` = 'test' AND `nid` = '123456789012345' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `t_node` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_node` WHERE `nid` = '123456789012345' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_node_op` [ RunTime:0.007001s ]
+SQL: INSERT INTO `t_node_op` (`nid`,`otype`,`otime`,`mix_scale`,`mix_level`,`mix_freq`,`onh3`,`oh2s`,`oresult`) VALUES ('123456789012345','1','2014-10-15 20:15:53',12,231,11,12,12,0) [ RunTime:0.023001s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T20:15:54+08:00 ] ::1 /tcs/Home/Inner/node_info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.009000s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 151 行.
+SQL: SELECT COUNT(did) AS tp_count FROM `t_node_view` LIMIT 1   [ RunTime:0.087005s ]
+NOTIC: [8] Undefined variable: condmap D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerController.class.php 第 153 行.
+SQL: SELECT * FROM `t_node_view` LIMIT 0,20   [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.095005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2014-10-15T20:15:57+08:00 ] ::1 /tcs/Home/Innerf/node_info_single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_node_view` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `t_node_view` WHERE `baidu_id` = '455405007' LIMIT 1   [ RunTime:0.004000s ]
+NOTIC: [8] Undefined index: auto_cleanup_time D:\Xampp\htdocs\tcs\Application\Home\Controller\InnerfController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T20:25:42+08:00 ] ::1 /tcs/Home/Index/logoff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.006001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2014-10-15T20:25:45+08:00 ] ::1 /tcs/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.047003s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: title D:\Xampp\htdocs\tcs\Application\Runtime\Cache\Home\ccea6a400660ce54d68cab67b9f68781.php 第 3 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2014-10-15T20:25:54+08:00 ] ::1 /tcs/Home/Index/login_validate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_user` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `t_user` WHERE `uid` = 'admin' AND `password` = '123'  [ RunTime:0.001000s ]
+SQL: UPDATE `t_user` SET `last_login`='2014-10-15 20:25:54' WHERE `uid` = 'admin' [ RunTime:0.059003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2014-10-15T20:25:58+08:00 ] ::1 /tcs/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.068003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2014-10-15T20:26:00+08:00 ] ::1 /tcs/Home/Inner/system_summary?_dc=1413375958635
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_user` [ RunTime:0.007001s ]
+SQL: SELECT COUNT(uid) AS tp_count FROM `t_user` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_province` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(vid) AS tp_count FROM `t_province` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_city` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(cid) AS tp_count FROM `t_city` LIMIT 1   [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `t_district` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(did) AS tp_count FROM `t_district` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_node` [ RunTime:0.008000s ]
+SQL: SELECT COUNT(nid) AS tp_count FROM `t_node` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_sys_msg` [ RunTime:0.147009s ]
+SQL: SELECT COUNT(mid) AS tp_count FROM `t_sys_msg` LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.082005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2014-10-15T20:26:03+08:00 ] ::1 /tcs/Home/Inner/msg_info?_dc=1413375962003
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.053003s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.084005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.086005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2014-10-15T20:26:04+08:00 ] ::1 /tcs/Home/Inner/msg_info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_sys_msg_view` [ RunTime:0.030002s ]
+SQL: SELECT COUNT(mid) AS tp_count FROM `t_sys_msg_view` LIMIT 1   [ RunTime:0.004001s ]
+SQL: SELECT * FROM `t_sys_msg_view` ORDER BY mtime desc LIMIT 0,20   [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.071004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+
+[ 2014-10-15T20:26:38+08:00 ] ::1 /tcs/Home/Inner/acc_info?_dc=1413375997378
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_user` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `t_user` WHERE ( utype <> '1' )  [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.112006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.114006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2014-10-15T20:26:40+08:00 ] ::1 /tcs/Home/Inner/perm_info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_perm_view` [ RunTime:0.044002s ]
+SQL: SELECT * FROM `t_perm_view` WHERE `uid` = '0'  [ RunTime:0.003001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.092005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.094005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2014-10-15T20:26:42+08:00 ] ::1 /tcs/Home/Inner/perm_info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_perm_view` [ RunTime:0.035002s ]
+SQL: SELECT * FROM `t_perm_view` WHERE `uid` = 'user001'  [ RunTime:0.040002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.082005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012001s ]
+
+[ 2014-10-15T20:27:23+08:00 ] ::1 /tcs/Home/Inner/perm_info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_perm_view` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `t_perm_view` WHERE `uid` = 'test'  [ RunTime:0.010001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.071004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.072004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2014-10-15T22:26:02+08:00 ] ::1 /tcs/Home/Inner/perm_modify_validate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_perm` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `t_perm` WHERE `uid` = 'test' AND `did` = 3 LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `t_perm` SET `uid`='test',`did`=3,`pcheck`=0,`pcontrol`=1 WHERE `pid` = 15 [ RunTime:0.081004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2014-10-15T22:26:05+08:00 ] ::1 /tcs/Home/Inner/perm_modify_validate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.003000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.074004s ]
+SQL: SHOW COLUMNS FROM `t_perm` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `t_perm` WHERE `uid` = 'test' AND `did` = 4 LIMIT 1   [ RunTime:0.002000s ]
+SQL: UPDATE `t_perm` SET `uid`='test',`did`=4,`pcheck`=0,`pcontrol`=1 WHERE `pid` = 40 [ RunTime:0.056004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+
+[ 2014-10-15T22:26:08+08:00 ] ::1 /tcs/Home/Inner/perm_modify_validate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.005000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_perm` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_perm` WHERE `uid` = 'test' AND `did` = 8 LIMIT 1   [ RunTime:0.002000s ]
+SQL: UPDATE `t_perm` SET `uid`='test',`did`=8,`pcheck`=0,`pcontrol`=1 WHERE `pid` = 42 [ RunTime:0.128007s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2014-10-15T22:26:10+08:00 ] ::1 /tcs/Home/Inner/perm_modify_validate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_perm` [ RunTime:0.006001s ]
+SQL: SELECT * FROM `t_perm` WHERE `uid` = 'test' AND `did` = 8 LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `t_perm` SET `uid`='test',`did`=8,`pcheck`=0,`pcontrol`=1 WHERE `pid` = 42 [ RunTime:0.039002s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T22:26:17+08:00 ] ::1 /tcs/Home/Inner/perm_modify_validate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_perm` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_perm` WHERE `uid` = 'test' AND `did` = 8 LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `t_perm` SET `uid`='test',`did`=8,`pcheck`=0,`pcontrol`=1 WHERE `pid` = 42 [ RunTime:0.135008s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
+[ 2014-10-15T22:26:22+08:00 ] ::1 /tcs/Home/Inner/perm_modify_validate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.006001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_perm` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `t_perm` WHERE `uid` = 'test' AND `did` = 8 LIMIT 1   [ RunTime:0.003000s ]
+SQL: UPDATE `t_perm` SET `uid`='test',`did`=8,`pcheck`=0,`pcontrol`=1 WHERE `pid` = 42 [ RunTime:0.073004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2014-10-15T22:26:23+08:00 ] ::1 /tcs/Home/Inner/perm_modify_validate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.062003s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_perm` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `t_perm` WHERE `uid` = 'test' AND `did` = 7 LIMIT 1   [ RunTime:0.001000s ]
+SQL: INSERT INTO `t_perm` (`uid`,`did`,`pcheck`,`pcontrol`) VALUES ('test',7,0,1) [ RunTime:0.099006s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
+[ 2014-10-15T22:26:25+08:00 ] ::1 /tcs/Home/Inner/perm_modify_validate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `t_perm` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `t_perm` WHERE `uid` = 'test' AND `did` = 4 LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `t_perm` SET `uid`='test',`did`=4,`pcheck`=0,`pcontrol`=1 WHERE `pid` = 40 [ RunTime:0.184011s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2014-10-15T22:26:26+08:00 ] ::1 /tcs/Home/Inner/perm_modify_validate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `t_perm` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `t_perm` WHERE `uid` = 'test' AND `did` = 3 LIMIT 1   [ RunTime:0.002000s ]
+SQL: UPDATE `t_perm` SET `uid`='test',`did`=3,`pcheck`=0,`pcontrol`=1 WHERE `pid` = 15 [ RunTime:0.081005s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2014-10-15T22:26:28+08:00 ] ::1 /tcs/Home/Inner/perm_info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\Xampp\htdocs\tcs\tp\Common\functions.php 第 1191 行.
+SQL: SHOW COLUMNS FROM `t_config` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_ip' LIMIT 1   [ RunTime:0.003001s ]
+SQL: SELECT * FROM `t_config` WHERE `type` = 'server_port' LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `t_perm_view` [ RunTime:0.112006s ]
+SQL: SELECT * FROM `t_perm_view` WHERE `uid` = 'user001'  [ RunTime:0.011000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.139008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.140008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
